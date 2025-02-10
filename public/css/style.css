@@ -1,0 +1,204 @@
+html {
+    font-size: 16px;
+    background-color: #F7DCBC;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+button {
+    background-color: #CF640C;
+    color: #F7DCBC;
+    border: 2px solid #3E1E04;
+    border-radius: 10px;
+}
+
+.brown p, .brown h1, .brown a{
+    color: #3E1E04;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo-image {
+    width: 4rem;
+}
+
+#banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CF640C;
+    padding: 0 2rem;
+}
+
+#banner h2, #banner a {
+    color: #3E1E04;
+}
+
+/* BURGER MENU */
+
+#main-nav {
+    display: flex;
+    align-items: center;
+}
+  
+#burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+  
+#main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+  
+#main-nav li {
+    margin-left: 1rem;
+}
+
+/* MAIN */
+/* DESCRIPTION SECTION */
+#description-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#description-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+#description-picture {
+    margin: 2rem;
+}
+
+/* NEW ITEMS SECTION */
+
+#new-items-container {
+    background-color: #3E1E04;
+    margin: 2rem;
+}
+
+#new-items-container h2 {
+    padding-top: 2rem;
+}
+
+#items-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #F7DCBC;
+}
+
+.items-box {
+    padding: 2rem;
+}
+
+/* FOOTER */
+footer {
+    color: #F7DCBC;
+    background-color: #3E1E04;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    /* BURGER MENU MOBILE */
+    #main-nav ul {
+        display: none; /* Cache le menu par défaut */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+        right: 0;
+        width: 100%;
+        background-color: #f0f0f0; /* Couleur de fond du menu */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    #main-nav li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+  
+    #main-nav a {
+        display: block;
+        padding: 10px;
+        color: #F7DCBC;
+        text-decoration: none;
+    }
+  
+    #main-nav a:hover {
+        background-color: #ddd;
+    }
+  
+    #main-nav ul.active {
+        display: flex; /* Affiche le menu au clic */
+        background-color: #3E1E04;
+        width: 20rem;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 3px 0;
+        }
+    
+    #description-container {
+        display: flex;
+        flex-direction: colum;
+        align-items: center;
+        justify-content: center;
+        /* background-image: url('../images/mike-kenneally-zlwDJoKTuA8-unsplash.jpg'); */  /* TODO incorporer l'image en background en laissant le text visible
+        /* background-size: cover; */
+    }
+
+    #description-picture {
+        display: none;
+    }
+
+    /* NEW ITEMS SECTION */  
+
+    /* #new-items-container {
+        background-color: #3E1E04;
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+    
+    } */
+    
+     #items-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 2rem;
+        color: #F7DCBC;
+    }
+
+    .items-box {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
