@@ -1,5 +1,5 @@
 html {
-    font-size: 16px;
+    font-size: 18px;
     background-color: #F7DCBC;
 }
 
@@ -9,7 +9,7 @@ main {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
 }
 
@@ -161,12 +161,23 @@ footer p {
 
                                                       /** CATALOGUE PAGE DESKTOP DISPLAY*/
 
-#illustration h1{
-    position: relative;
+#illustration {
+    height: 60vh;
+}
+
+#illustration img {
     width: 100%;
-    background-color: #3E1E04;
-    font-size: 4rem;
+    height: 60vh;
+    background-image: cover;
+    position: absolute;
+}
+
+#illustration #illustration-title {
+    background: #3E1E04;
     color: #F7DCBC;
+    position: relative;
+    text-align: center;
+    top: 15vh;
 }
 
 #discover-container {
@@ -182,11 +193,43 @@ footer p {
     margin: 1rem 0;
 }
 
-                                                            /** MOBILE DISPLAY */
+                                                     /** CTALOGE PAGE */
+
+
+#product-picture {
+    background-color: #F7DCBC;
+}
+
+#product-picture img {
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+#product-detail {
+    width: 70%;
+    margin: 4rem auto;
+}
+
+                                                    /** ERROR 404 PAGE*/
+
+#error {
+    color: #F7DCBC;
+}
+
+#error p {
+    text-align: center;
+}
+
+                                                     /** MOBILE DISPLAY */
 
 @media (max-width: 768px) {
 
-                                                            /** BURGER MENU MOBILE */
+    #illustration h1 {
+        top: 18vh;
+        font-size: 3rem;
+    }
+                                                      /** BURGER MENU MOBILE */
     #main-nav ul {
         display: none;
         flex-direction: column;
@@ -274,5 +317,28 @@ footer p {
         flex-direction: column;
         align-items: center;
         
+    }
+}
+
+@media (max-width: 550px) {
+
+    #illustration h1 {
+        font-size: 2rem;
+        top: 15vh;
+    }
+}
+
+@media (max-width: 440px) {
+
+    #illustration h1 {
+        font-size: 1.5rem;
+        top: 12vh;
+    }
+}
+
+@media (max-width: 370px) {
+
+    #logo h2 {
+        font-size: 1.5rem;
     }
 }
