@@ -24,7 +24,7 @@ button {
     border-radius: 10px;
 }
 
-.brown p, .brown h1, .brown a{
+.brown p, .brown h1, .brown a, .brown h3 {
     color: #3E1E04;
 }
 
@@ -248,6 +248,12 @@ footer p {
 
     .items-box {
         margin: 1rem;
+    }
+
+    .items-box img {
+        height: 30vh;
+        width: 90%;
+        margin-bottom: 1rem;
     }
 
                                                   /** CATALOGUE PAGE MOBILE DISPLAY*/
