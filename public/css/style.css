@@ -3,6 +3,11 @@ html {
     background-color: #F7DCBC;
 }
 
+main {
+    padding: 0;
+    background-color: #3E1E04;
+}
+
 h1 {
     font-size: 4rem;
     text-align: center;
@@ -23,10 +28,16 @@ button {
     color: #3E1E04;
 }
 
+                                             /** BANNER */
+
 #logo {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+#logo h2 {
+    margin-top: 0.5rem;
 }
 
 #logo-image {
@@ -46,7 +57,11 @@ button {
     color: #3E1E04;
 }
 
-/* BURGER MENU */
+#banner a {
+    text-decoration: none;
+}
+
+                                              /** BURGER MENU */
 
 #main-nav {
     display: flex;
@@ -71,9 +86,10 @@ button {
     margin-left: 1rem;
 }
 
-/* MAIN */
-/* DESCRIPTION SECTION */
+                                               /** MAIN */
+                                              /** DESCRIPTION SECTION */
 #description-container {
+    background-color: #F7DCBC;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -91,18 +107,19 @@ button {
     margin: 2rem;
 }
 
-/* NEW ITEMS SECTION */
+                                                 /** NEW ITEMS SECTION */
 
 #new-items-container {
     background-color: #3E1E04;
-    margin: 2rem;
+    padding-bottom: 4rem;
+    margin-bottom: 0;
 }
 
 #new-items-container h2 {
-    padding-top: 2rem;
+    padding: 2rem 0 1rem 0;
 }
 
-#items-container {
+.items-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -110,27 +127,64 @@ button {
 }
 
 .items-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 2rem;
+    background-color: #F7DCBC;
+    margin: 1rem;
 }
 
-/* FOOTER */
+.items-box p {
+    color: #3E1E04;
+}
+
+                                                      /** FOOTER */
 footer {
-    color: #F7DCBC;
-    background-color: #3E1E04;
+    background-color: #F7DCBC;
     text-align: center;
 }
 
+footer p {
+    color: #3E1E04;
+}
+
+                                                      /** CATALOGUE PAGE DESKTOP DISPLAY*/
+
+#illustration h1{
+    position: relative;
+    width: 100%;
+    background-color: #3E1E04;
+    font-size: 4rem;
+    color: #F7DCBC;
+}
+
+#discover-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3E1E04;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+.category, .select-all {
+    margin: 1rem 0;
+}
+
+                                                            /** MOBILE DISPLAY */
+
 @media (max-width: 768px) {
 
-    /* BURGER MENU MOBILE */
+                                                            /** BURGER MENU MOBILE */
     #main-nav ul {
-        display: none; /* Cache le menu par défaut */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+        top: 60px;
         right: 0;
         width: 100%;
-        background-color: #f0f0f0; /* Couleur de fond du menu */
+        background-color: #f0f0f0;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
   
@@ -147,13 +201,15 @@ footer {
     }
   
     #main-nav a:hover {
-        background-color: #ddd;
+        background-color: #F7DCBC;
+        color: #3E1E04;
     }
   
     #main-nav ul.active {
-        display: flex; /* Affiche le menu au clic */
+        display: flex;
         background-color: #3E1E04;
         width: 20rem;
+        z-index: 1;
     }
 
     .bar {
@@ -162,7 +218,7 @@ footer {
         background-color: #333;
         margin: 3px 0;
         }
-    
+                                                /** DESCRIPTION CONTAINER */
     #description-container {
         display: flex;
         flex-direction: colum;
@@ -176,29 +232,31 @@ footer {
         display: none;
     }
 
-    /* NEW ITEMS SECTION */  
+                                                /** NEW ITEMS SECTION */  
 
-    /* #new-items-container {
-        background-color: #3E1E04;
-        margin: 2rem;
-        display: flex;
-        flex-direction: column;
+    #new-items-container h2 {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
     
-    } */
-    
-     #items-container {
+    .items-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        margin: 2rem;
-        color: #F7DCBC;
     }
 
     .items-box {
-        margin: 1rem 0;
+        margin: 1rem;
+    }
+
+                                                  /** CATALOGUE PAGE MOBILE DISPLAY*/
+
+
+    .dicover-items {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
     }
 }
