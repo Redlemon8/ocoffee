@@ -3,35 +3,23 @@
 <!-- PRODUCT SHEET -->
 
 <section class="new-items-container">
-  <h2>Nouveautés</h2>
+  <h2>Notre catalogue</h2>
   <section class="items-container brown">
-    <section class="items-box">
-      <h3>Expresso</h3>
-      <img src="/images/coffees/100955890.png" alt="Grains de café d'Italie">
-      <p>Description : Café fort et concentré préparé en faisant passer de l'eau chaude à travers du café finement moulu.</p>
-      <p>Origine : Italie</p>
-      <p>Prix au kilo : 20.99 €</p>
-      <p>Caractéristique principale : Corsé</p>
-      <button>Découvrir</button>
-    </section>
-    <section class="items-box">
-      <h3>Columbian</h3>
-      <img src="/images/coffees/100955894.png" alt="Grains de café Colombien">
-      <p>Description : Café moyennement corsé avec une acidité vive et une saveur riche.</p>
-      <p>Origine : Colombie</p>
-      <p>Prix au kilo : 18.75 €</p>
-      <p>Caractéristique principale : Acide</p>
-      <button>Découvrir</button>
+
+    <% allProducts.forEach(product => { %>
+
+      <section class="items-box">
+        <h3><%= product.name %></h3>
+        <img src="/images/coffees/<%= product.reference %>.png" alt="photo de café origine <%= product.origin %>">
+        <p>Description : <%= product.description %></p>
+        <p>Origine : <%= product.origin %></p>
+        <p>Prix au kilo : <%= product.price_per_kilo %> €</p>
+        <p>Caractéristique principale : product.characteristic</p>
+        <button>Découvrir</button>
       </section>
-    <section class="items-box">
-      <h3>Ethiopian</h3>
-      <img src="/images/coffees/105589090.png">
-      <p>Description : Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.</p>
-      <p>Origine : Éthiopie</p>
-      <p>Prix au kilo : 22.50 €</p>
-      <p>Caractéristique principale : Fruité</p>
-      <button>Découvrir</button>
-      </section>
+    
+    <% }) %>
+    
   </section>
 </section>
 

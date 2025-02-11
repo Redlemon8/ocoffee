@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/catalogue", catalogController.catalogPage);
+router.get("/catalogue/all", catalogController.catalogList);
 
 router.get("/produit", (req, res) => {
   res.render("produit");
