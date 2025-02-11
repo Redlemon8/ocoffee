@@ -10,6 +10,7 @@ main {
 
 h1, h2, h3, p, a {
     font-family: "Playfair Display", serif;
+    line-height: 1.5rem;
 }
 
 h1 {
@@ -19,6 +20,7 @@ h1 {
 
 h2 {
     text-align: center;
+    color: #F7DCBC;
 }
 
 button, select {
@@ -132,6 +134,10 @@ button, select {
     padding: 2rem 0 1rem 0;
 }
 
+#new-items-container img {
+    margin-bottom: 1rem;
+}
+
 .items-container {
     display: flex;
     flex-direction: row;
@@ -226,6 +232,7 @@ footer p {
 }
 
                                                      /** MOBILE DISPLAY */
+
 
 @media (max-width: 768px) {
 
