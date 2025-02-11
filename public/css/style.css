@@ -28,6 +28,15 @@ button, select {
     color: #F7DCBC;
     border: 2px solid #3E1E04;
     border-radius: 10px;
+    margin: 20px;
+}
+
+a {
+    padding: 20px;
+}
+
+button:hover, a:hover, select:hover {
+    cursor: url('/images/coffee-bean.svg'), pointer;
 }
 
 .select-all {
