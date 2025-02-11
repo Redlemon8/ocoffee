@@ -14,13 +14,10 @@
   <section id="discover-container">
     <div>
       <label for="coffe"></label>
-      <select class="category" name="coffe" id="coffe-select">
-        <option value="colombie">Colombie</option>
-        <option value="equateur">Equateur</option>
-        <option value="perou">Pérou</option>
-        <option value="guatemala">Guatemala</option>
-        <option value="brezil">Brésil</option>
-        <option value="bolivie">Bolivie</option>
+      <select class="category" name="coffe" id="coffe">
+        <% products.forEach(coffe => { %>
+          <option value="<%= coffe.orign %>"><%= coffe.origin %></option>
+        <% }) %>
       </select>
     </div>
     <section class="items-container">

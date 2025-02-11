@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import catalogController from './controlllers/catalogController.js';
 
 const router = Router();
 
@@ -6,9 +7,7 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.get("/catalogue", (req, res) => {
-  res.render("catalogue");
-});
+router.get("/catalogue", catalogController.catalogPage);
 
 router.get("/produit", (req, res) => {
   res.render("produit");
