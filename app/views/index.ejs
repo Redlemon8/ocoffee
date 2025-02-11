@@ -1,98 +1,55 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="../docs/demande-client/00.assets/logo.ico" />
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-  <title>O'cofee</title>
-</head>
-<body>
+<%- include('./partials/header') %>
 
-  <!-- BANNER -->
-  <header id="banner" class="brown">
-    <a href="index.html">
-      <div id="logo">
-        <img id="logo-image" src="/images/logo.svg" alt="Grains de café, Logo o'coffee" >
-        <h2>O'coffee</h2>
-      </div>
-    </a>
-    <nav id="main-nav">
-      <div id="burger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-      <ul>
-        <li><a href="../views/index.html">Accueil</a></li>
-        <li><a href="../views/catalogue.html">Catalogue</a></li>
-        <li><a href="../views/produit.html">Boutique</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
+  <!-- MAIN -->
+  <!-- DESCRIPTION CONTAINER -->
 
-    <!-- MAIN -->
-    <!-- DESCRIPTION CONTAINER -->
-
-    <div id="description-container" class="brown">
-      <section id="description-side" class="index">
-        <h1>O'coffee</h1>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fugit voluptate ut ex esse deserunt repudiandae eveniet harum molestiae delectus expedita quas sint illum, sunt voluptates fugiat minus, reprehenderit tempore?
-        Quasi veritatis alias earum nam praesentium eum officiis rerum nisi aperiam non. Odit obcaecati voluptate quam vero. Ducimus neque quisquam sunt assumenda consequatur! Odio aut temporibus unde nulla voluptatum voluptatibus!
-        Sapiente voluptatibus enim dicta. Necessitatibus enim rem saepe ducimus a? Magnam sit laborum voluptate laudantium, ipsam veritatis, consequuntur non minus, et nobis ex minima distinctio assumenda quasi ut excepturi maxime.
-        </p>
-        <button>Voir le catalogue</button>
-      </section>
-      <section id="description-picture">
-        <img src="/images/mike-kenneally-zlwDJoKTuA8-unsplash.jpg" alt="Tasse de café avec un coeur dans la mousse et des grains de café sur la table" >
-      </section>
-    </div>
-
-    <!-- NEW ITEMS SETION -->
-    <section id="new-items-container">
-      <h2>Nouveautés</h2>
-      <section class="items-container brown">
-        <section class="items-box">
-          <h3>Expresso</h3>
-          <img src="/images/coffees/100955890.png" alt="Grains de café d'Italie">
-          <p>Description : Café fort et concentré préparé en faisant passer de l'eau chaude à travers du café finement moulu.</p>
-          <p>Origine : Italie</p>
-          <p>Prix au kilo : 20.99 €</p>
-          <p>Caractéristique principale : Corsé</p>
-          <button>Découvrir</button>
-        </section>
-        <section class="items-box">
-          <h3>Columbian</h3>
-          <img src="/images/coffees/100955894.png" alt="Grains de café Colombien">
-          <p>Description : Café moyennement corsé avec une acidité vive et une saveur riche.</p>
-          <p>Origine : Colombie</p>
-          <p>Prix au kilo : 18.75 €</p>
-          <p>Caractéristique principale : Acide</p>
-          <button>Découvrir</button>
-          </section>
-        <section class="items-box">
-          <h3>Ethiopian</h3>
-          <img src="/images/coffees/105589090.png">
-          <p>Description : Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.</p>
-          <p>Origine : Éthiopie</p>
-          <p>Prix au kilo : 22.50 €</p>
-          <p>Caractéristique principale : Fruité</p>
-          <button>Découvrir</button>
-          </section>
-      </section>
+  <div id="description-container" class="brown">
+    <section id="description-side" class="index">
+      <h1>O'coffee</h1>
+      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod fugit voluptate ut ex esse deserunt repudiandae eveniet harum molestiae delectus expedita quas sint illum, sunt voluptates fugiat minus, reprehenderit tempore?
+      Quasi veritatis alias earum nam praesentium eum officiis rerum nisi aperiam non. Odit obcaecati voluptate quam vero. Ducimus neque quisquam sunt assumenda consequatur! Odio aut temporibus unde nulla voluptatum voluptatibus!
+      Sapiente voluptatibus enim dicta. Necessitatibus enim rem saepe ducimus a? Magnam sit laborum voluptate laudantium, ipsam veritatis, consequuntur non minus, et nobis ex minima distinctio assumenda quasi ut excepturi maxime.
+      </p>
+      <button>Voir le catalogue</button>
     </section>
-  </main>
+    <section id="description-picture">
+      <img src="/images/mike-kenneally-zlwDJoKTuA8-unsplash.jpg" alt="Tasse de café avec un coeur dans la mousse et des grains de café sur la table" >
+    </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>O'coffee</p>
-  </footer>
-  <script src="../public/js/burger.js"></script>
-</body>
+  <!-- NEW ITEMS SETION -->
+  <section id="new-items-container">
+    <h2>Nouveautés</h2>
+    <section class="items-container brown">
+      <section class="items-box">
+        <h3>Expresso</h3>
+        <img src="/images/coffees/100955890.png" alt="Grains de café d'Italie">
+        <p>Description : Café fort et concentré préparé en faisant passer de l'eau chaude à travers du café finement moulu.</p>
+        <p>Origine : Italie</p>
+        <p>Prix au kilo : 20.99 €</p>
+        <p>Caractéristique principale : Corsé</p>
+        <button>Découvrir</button>
+      </section>
+      <section class="items-box">
+        <h3>Columbian</h3>
+        <img src="/images/coffees/100955894.png" alt="Grains de café Colombien">
+        <p>Description : Café moyennement corsé avec une acidité vive et une saveur riche.</p>
+        <p>Origine : Colombie</p>
+        <p>Prix au kilo : 18.75 €</p>
+        <p>Caractéristique principale : Acide</p>
+        <button>Découvrir</button>
+        </section>
+      <section class="items-box">
+        <h3>Ethiopian</h3>
+        <img src="/images/coffees/105589090.png">
+        <p>Description : Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.</p>
+        <p>Origine : Éthiopie</p>
+        <p>Prix au kilo : 22.50 €</p>
+        <p>Caractéristique principale : Fruité</p>
+        <button>Découvrir</button>
+        </section>
+    </section>
+  </section>
 </html>
+
+<%- include('./partials/footer') %>
