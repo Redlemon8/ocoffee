@@ -16,7 +16,7 @@ CREATE TABLE "product" (
 set client_encoding to utf8;
 
 INSERT INTO "product"("id", "name", "description", "origin", "price_per_kilo", "characteristic", "available", "reference") VALUES
-(1, 'Espresso', 'Café fort et concentré préparé en faisant passer de l''eau chaude à travers du café finement moulu.', 'Italie', 20.99, 'Corsé', 'Oui', 100955894),
+(1, 'Espresso', 'Café fort et concentré préparé en faisant passer de l''eau chaude à travers du café finement moulu.', 'Italie', 20.99, 'Corsé', 'Oui', 100955890),
 (2, 'Columbian', 'Café moyennement corsé avec une acidité vive et une saveur riche.', 'Colombie', 18.75, 'Acide', 'Oui', 100955894),
 (3, 'Ethiopian Yirgacheffe', 'Réputé pour son arôme floral, son acidité vive et ses notes de saveur citronnée.', 'Éthiopie', 22.50, 'Fruité', 'Oui', 105589090),
 (4, 'Brazilian Santos', 'Café doux et lisse avec un profil de saveur de noisette.', 'Brésil', 17.80, 'Doux', 'Oui', 134009550),

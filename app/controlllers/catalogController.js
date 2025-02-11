@@ -6,8 +6,9 @@ const catalogController = {
     try {
 
       const products = await dataMapper.getAllProducts();
+      const threeProductList = await dataMapper.getThreeRandomProducts();
 
-      res.render("catalogue", {products});
+      res.render("catalogue", { products, threeProductList });
 
     } catch (error) {
       console.log(error);

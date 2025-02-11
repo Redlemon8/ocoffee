@@ -34,7 +34,7 @@ button, select {
     border: 1px solid #F7DCBC;
 }
 
-#coffe-select {
+#coffe {                                                       /** ARROW SELECTER CATALOG SECTION */
     background-image: url("../images/down.png");
     border: 1px solid #F7DCBC;
 }
@@ -278,7 +278,7 @@ footer p {
     .bar {
         width: 25px;
         height: 3px;
-        background-color: #333;
+        background-color: #3E1E04;
         margin: 3px 0;
         }
                                                 /** DESCRIPTION CONTAINER */
