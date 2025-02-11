@@ -124,17 +124,17 @@ button, select {
 
                                                  /** NEW ITEMS SECTION */
 
-#new-items-container {
+.new-items-container {
     background-color: #3E1E04;
     padding-bottom: 4rem;
     margin-bottom: 0;
 }
 
-#new-items-container h2 {
+.new-items-container h2 {
     padding: 2rem 0 1rem 0;
 }
 
-#new-items-container img {
+.new-items-container img {
     margin-bottom: 1rem;
 }
 
@@ -203,23 +203,6 @@ footer p {
     margin: 1rem 0;
 }
 
-                                                     /** CATALOG PAGE */
-
-
-#product-picture {
-    background-color: #F7DCBC;
-}
-
-#product-picture img {
-    width: 70%;
-    margin: auto;
-    display: block;
-}
-
-#product-detail {
-    width: 70%;
-    margin: 4rem auto;
-}
 
                                                     /** ERROR 404 PAGE*/
 
@@ -298,7 +281,7 @@ footer p {
 
                                                 /** NEW ITEMS SECTION */  
 
-    #new-items-container h2 {
+    .new-items-container h2 {
         margin-bottom: 0;
         padding-bottom: 0;
     }
