@@ -1,11 +1,10 @@
 import { Router } from 'express';
 import catalogController from './controlllers/catalogController.js';
+import homeController from './controlllers/homeController.js';
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.render("index");
-});
+router.get("/", homeController.homePage);
 
 router.get("/catalogue", catalogController.catalogPage);
 router.get("/catalogue/all", catalogController.catalogList);
