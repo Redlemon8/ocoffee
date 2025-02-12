@@ -15,27 +15,28 @@
     <div>
       <label for="coffe"></label>
       <select class="category" name="coffe" id="coffe">
-        <option value="origine">Origine</option>
-        <% products.forEach(coffe => { %>
-          <option value="<%= coffe.orign %>"><%= coffe.origin %></option>
+        <option value="origine">Catégorie</option>
+
+        <% characteristicsProducts.forEach(coffe => { %>
+          <option value="<%= coffe.characteristic %>"><%= coffe.characteristic %></option>
         <% }) %>
+
       </select>
     </div>
+
     <section class="items-container brown">
+
       <% threeProductList.forEach(oneProduct => { %>
        
         <section class="items-box">
           <h3><%= oneProduct.name %></h3>
           <img src="/images/coffees/<%= oneProduct.reference %>.png" alt="Grains de café d'Italie">
-          <p>Description : <%= oneProduct.description %></p>
-          <p>Origine : <%= oneProduct.origin %></p>
-          <p>Prix au kilo : <%= oneProduct.price_per_kilo %> €</p>
-          <p>Caractéristique principale : <%= oneProduct.characteristique %></p>
+          <p>Caractéristique principale : <%= oneProduct.characteristic %></p>
           <button>Découvrir</button>
         </section>
 
       <% }) %>
-
+    </section>
     <div>
       <button class="select-all"><a href="catalogue/all">Voir tout</a></button>
     </div>

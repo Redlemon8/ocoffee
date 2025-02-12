@@ -11,6 +11,7 @@ main {
 h1, h2, h3, p, a {
     font-family: "Playfair Display", serif;
     line-height: 1.5rem;
+    text-decoration: none;
 }
 
 h1 {
@@ -81,10 +82,6 @@ button:hover, a:hover, select:hover {
     color: #3E1E04;
 }
 
-#banner a {
-    text-decoration: none;
-}
-
                                               /** BURGER MENU */
 
 #main-nav {
@@ -112,7 +109,9 @@ button:hover, a:hover, select:hover {
 
                                                /** MAIN */
                                               /** DESCRIPTION SECTION */
+                                            
 #description-container {
+    width: 100%;
     background-color: #F7DCBC;
     display: flex;
     flex-direction: row;
@@ -125,9 +124,15 @@ button:hover, a:hover, select:hover {
     flex-direction: column;
     align-items: center;
     margin: 2rem;
+    width: 40%;
+}
+
+#description-side h1 {
+    margin-bottom: 3rem;
 }
 
 #description-picture {
+    width: 55%;
     margin: 2rem;
 }
 
@@ -174,9 +179,13 @@ button:hover, a:hover, select:hover {
 footer {
     background-color: #F7DCBC;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-footer p {
+footer p, footer a{
     color: #3E1E04;
 }
 
@@ -194,12 +203,16 @@ footer p {
 }
 
 #illustration #illustration-title {
-    background: #3E1E04;
+    background-color: #3E1E04;
     color: #F7DCBC;
     position: relative;
     text-align: center;
     top: 30vh;
 }
+
+ #illustration-title h1 {
+    height: 1.7rem;
+ }
 
 #discover-container {
     display: flex;
@@ -216,7 +229,6 @@ footer p {
 
 .select-all a {
     color: #F7DCBC;
-    text-decoration: none;
 }
 
 
@@ -298,6 +310,10 @@ footer p {
         justify-content: center;
         /* background-image: url('../images/mike-kenneally-zlwDJoKTuA8-unsplash.jpg'); */  /* TODO incorporer l'image en background en laissant le text visible
         /* background-size: cover; */
+    }
+
+    #description-side {
+        width: 80%;
     }
 
     #description-picture {

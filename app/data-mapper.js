@@ -12,6 +12,12 @@ const dataMapper = {
     const result = await client.query(`SELECT * FROM "product" ORDER BY RANDOM() LIMIT 3`);
     const threeProductList = result.rows;
     return threeProductList;
+  },
+
+  async getCharacteristicsProducts() {
+    const result = await client.query(`SELECT DISTINCT "characteristic" FROM "product"`);
+    const characteristicsProducts = result.rows;
+    return characteristicsProducts;
   }
 
 };

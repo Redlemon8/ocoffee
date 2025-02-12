@@ -5,10 +5,10 @@ const catalogController = {
   async catalogPage(req, res) {
     try {
 
-      const products = await dataMapper.getAllProducts();
+      const characteristicsProducts = await dataMapper.getCharacteristicsProducts();
       const threeProductList = await dataMapper.getThreeRandomProducts();
 
-      res.render("catalogue", { products, threeProductList });
+      res.render("catalogue", { threeProductList, characteristicsProducts });
 
     } catch (error) {
       console.log(error);
