@@ -26,8 +26,8 @@ h2 {
 
 button, select {
     background-color: #CF640C;
-    color: #F7DCBC;
-    border: 2px solid #3E1E04;
+    color: #3E1E04;
+    border: none;
     border-radius: 10px;
     margin: 20px;
 }
@@ -36,12 +36,19 @@ a {
     padding: 20px;
 }
 
+.brown .anchor-color a{
+    color: #3E1E04;
+    font-weight: bold;
+}
+
 button:hover, a:hover, select:hover {
     cursor: url('/images/coffee-bean.svg'), pointer;
 }
 
 .select-all {
     border: 1px solid #F7DCBC;
+    color: #3E1E04;
+    font-weight: bold;
 }
 
 #coffe {                                                       /** ARROW SELECTER CATALOG SECTION */
@@ -80,6 +87,11 @@ button:hover, a:hover, select:hover {
 
 #banner h2, #banner a {
     color: #3E1E04;
+}
+
+#banner li a {
+    font-weight: bold;
+    background-color: #F7DCBC;
 }
 
                                               /** BURGER MENU */
@@ -175,6 +187,23 @@ button:hover, a:hover, select:hover {
     color: #3E1E04;
 }
 
+.about-display, .product-display {
+    width: 97%;
+}
+
+.about-display img, .product-display img {
+    margin-bottom: 2rem;
+}
+
+.product-display img {
+    width: 50%;
+}
+
+picture img {
+    display: block;
+    margin: 2rem auto;
+}
+
                                                       /** FOOTER */
 footer {
     background-color: #F7DCBC;
@@ -228,7 +257,7 @@ footer p, footer a{
 }
 
 .select-all a {
-    color: #F7DCBC;
+    color: #3E1E04;
 }
 
 
@@ -251,6 +280,14 @@ footer p, footer a{
 
     .items-box {
         width: 45%;
+    }
+
+    .about-display, .product-display{
+        width: 97%;
+    }
+
+    .about-display img, .product-display img {
+        margin-bottom: 2rem;
     }
 }
 
@@ -359,6 +396,10 @@ footer p, footer a{
 
     .items-box {
         width: 90%;
+    }
+
+    .about-display, .product-display {
+        width: 97%;
     }
 }
 

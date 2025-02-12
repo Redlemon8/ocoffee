@@ -10,12 +10,26 @@
 
       <section class="items-box">
         <h3><%= product.name %></h3>
-        <img src="/images/coffees/<%= product.reference %>.png" alt="photo de café origine <%= product.origin %>">
+        <% if (product.available === "Non") { %>
+
+          <picture>
+            <source srcset="/images/coffees/<%= product.reference %>-non-available.webp" type="image/webp">
+            <source srcset="/images/coffees/<%= product.reference %>-non-available.png" type="image/png">
+            <img src="/images/coffees/<%= product.reference %>-non-available.png" alt="Image de café d'origine <%= product.origin %>">
+          </picture>
+         
+        <% } else { %>
+          <picture>
+            <source srcset="/images/coffees/<%= product.reference %>.webp" type="image/webp">
+            <source srcset="/images/coffees/<%= product.reference %>.png" type="image/png">
+            <img src="/images/coffees/<%= product.reference %>.png" alt="Image de café d'origine <%= product.origin %>">
+          </picture>
+
+        <% } %>
         <p>Description : <%= product.description %></p>
         <p>Origine : <%= product.origin %></p>
         <p>Prix au kilo : <%= product.price_per_kilo %> €</p>
-        <p>Caractéristique principale : product.characteristic</p>
-        <button>Découvrir</button>
+        <p>Caractéristique principale : <%= product.characteristic %></p>
       </section>
     
     <% }) %>

@@ -30,9 +30,13 @@
        
         <section class="items-box">
           <h3><%= oneProduct.name %></h3>
-          <img src="/images/coffees/<%= oneProduct.reference %>.png" alt="Grains de café d'Italie">
+          <picture>
+            <source srcset="/images/coffees/<%= oneProduct.reference %>.webp" type="image/webp">
+            <source srcset="/images/coffees/<%= oneProduct.reference %>.png" type="image/png">
+            <img src="/images/coffees/<%= oneProduct.reference %>.png" alt="Image de café d'origine <%= oneProduct.origin %>">
+          </picture>
           <p>Caractéristique principale : <%= oneProduct.characteristic %></p>
-          <button>Découvrir</button>
+          <button class="anchor-color"><a href="/produit/<%= oneProduct.id %>">Découvrir</a></button>
         </section>
 
       <% }) %>

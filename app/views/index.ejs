@@ -7,13 +7,16 @@
     <section id="description-side" class="index">
       <h1>O'coffee</h1>
       <p>
-        Jean et Jacques Pepper, deux frères passionnés par le café, sont les fondateurs de notre boutique.
-        Avec une expertise approfondie et un amour profond pour cette délicieuse boisson, ils ont créé un espace où le café est célébré comme une expérience raffinée et inspirante.
+        Jean et Jacques Pepper, nous sommes deux frères passionnés par le café et nous sommes les fondateurs de cette boutique. Avec une expertise approfondie et un amour profond pour cette délicieuse boisson, nous avons créé un espace où le café est célébré comme une expérience raffinée et inspirante.
       </p>
       <button class="select-all"><a href="/catalogue">Voir le catalogue</a></button>
     </section>
     <section id="description-picture">
-      <img src="/images/mike-kenneally-zlwDJoKTuA8-unsplash.jpg" alt="Tasse de café avec un coeur dans la mousse et des grains de café sur la table" >
+      <picture>
+        <source srcset="/images/mike-kenneally-zlwDJoKTuA8-unsplash.webp" type="image/webp">
+        <source srcset="/images/mike-kenneally-zlwDJoKTuA8-unsplash.jpg" type="image/jpg">
+        <img src="/images/mike-kenneally-zlwDJoKTuA8-unsplash.jpg" alt="Tasse de café avec un coeur dans la mousse et des grains de café sur la table" >
+      </picture>
     </section>
   </div>
 
@@ -25,9 +28,13 @@
        
         <section class="items-box">
           <h3><%= availableProduct.name %></h3>
-          <img src="/images/coffees/<%= availableProduct.reference %>.png" alt="Grains de café d'Italie">
+          <picture>
+            <source srcset="/images/coffees/<%= availableProduct.reference %>.webp" type="image/webp">
+            <source srcset="/images/coffees/<%= availableProduct.reference %>.png" type="image/png">
+            <img src="/images/coffees/<%= availableProduct.reference %>.png" alt="Grains de café d'Italie">
+          </picture>
           <p>Caractéristique principale : <%= availableProduct.characteristic %></p>
-          <button>Découvrir</button>
+          <button class="anchor-color"><a href="/produit/<%= availableProduct.id %>">Découvrir</a></button>
         </section>
 
       <% }) %>

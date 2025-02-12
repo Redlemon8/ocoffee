@@ -9,8 +9,10 @@ router.get("/", homeController.homePage);
 router.get("/catalogue", catalogController.catalogPage);
 router.get("/catalogue/all", catalogController.catalogList);
 
-router.get("/produit", (req, res) => {
-  res.render("produit");
+router.get("/boutique", (req, res) => {
+  res.render("about");
 });
+
+router.get("/produit/:id", homeController.renderOneProduct);
 
 export default router;
