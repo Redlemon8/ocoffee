@@ -3,7 +3,11 @@
 <!-- MAIN -->
 <!-- ILLUSTRATION SECTION -->
     <section id="illustration">
-      <img src="/images/nathan-dumlao-6VhPY27jdps-unsplash.jpg" alt="Photo d'illustration d'amis se partageant un café">
+      <picture>
+        <source srcset="/images/nathan-dumlao-6VhPY27jdps-unsplash.webp" type="image/webp">
+        <source srcset="/images/nathan-dumlao-6VhPY27jdps-unsplash.jpg" type="image/jpg">
+        <img src="/images/nathan-dumlao-6VhPY27jdps-unsplash.jpg" alt="Image de trois café partagé entre amis">
+      </picture>
       <div id="illustration-title">
         <h1>O'coffee</h1>
       </div>
@@ -12,9 +16,10 @@
 
 <!-- NEW PRODUCT SECTION -->
   <section id="discover-container">
+    <h2>Catalogue</h2>
     <div>
       <label for="coffe"></label>
-      <select class="category" name="coffe" id="coffe">
+      <select class="category" name="coffe" id="coffe" aria-label="Selectionnez l'origine">
         <option value="origine">Catégorie</option>
 
         <% characteristicsProducts.forEach(coffe => { %>

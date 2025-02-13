@@ -6,18 +6,22 @@
   <meta name="description" content="Découvrez une large sélection de produits de qualité, un large choix de café provenant du monde entier. Venez découvrir notre catalogue.">
   <link rel="icon" type="image/x-icon" href="/images/logo.ico" />
   <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
   <link rel="stylesheet" href="/css/style.css">
+
+  <% if (typeof pageStyle !== 'undefined') { %>
+    <link rel="stylesheet" href="/css/<%= pageStyle %>.css">
+  <% } %>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <title>O'cofee</title>
 </head>
 <body>
 
   <!-- BANNER -->
   <header id="banner" class="brown">
-    <a href="/">
+    <a id="logo-anchor" href="/">
       <div id="logo">
         <img id="logo-image" src="/images/logo.svg" alt="Grains de café, Logo o'coffee" >
         <h2>O'coffee</h2>
@@ -34,6 +38,7 @@
         <li><a href="/">Accueil</a></li>
         <li><a href="/catalogue">Catalogue</a></li>
         <li><a href="/boutique">Boutique</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   </header>

@@ -1,9 +1,13 @@
 <%- include('./partials/header') %>
 
 
-<section class="items-box brown about-display">
+<section class="items-box about-display">
   <h2>Notre Boutique</h2>
-  <img src="/images/about.jpg" alt="Tasse de café placé en cercle">
+  <picture>
+    <source srcset="/images/about.webp" type="image/webp">
+    <source srcset="/images/about.png" type="image/png">
+    <img src="/images/about.jpg" alt="Tasse de café placé en cercle">
+  </picture>
   <h3>Qui sommes-nous ?</h3>
   <p>Jean et Jacques Pepper, nous sommes deux frères passionnés par le café et nous sommes les fondateurs de cette boutique. Avec une expertise approfondie et un amour profond pour cette délicieuse boisson, nous avons créé un espace où le café est célébré comme une expérience raffinée et inspirante.
   </p>

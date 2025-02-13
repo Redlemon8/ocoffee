@@ -27,6 +27,10 @@ const catalogController = {
       console.log(error);
       res.status(500).send("Une erreur s'est produite.");
     }
+
+    /** 
+      * TODO render only the available items like the home page
+    */
   }
 };
 

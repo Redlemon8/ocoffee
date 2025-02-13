@@ -6,12 +6,9 @@ const homeController = {
 
     try {
 
-      const productId = req.params.id;
-
       const threeAvailableProducts = await dataMapper.getThreeAvailableRandomProducts();
-      const product = await dataMapper.getOneProduct(productId);
     
-      res.render("index", { threeAvailableProducts, product });
+      res.render("index", { threeAvailableProducts });
 
     } catch (error) {
       console.log(error);

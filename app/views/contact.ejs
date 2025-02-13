@@ -1,0 +1,32 @@
+<%- include('./partials/header', { pageStyle: "contact" }) %>
+
+<form action="" method="POST">
+    <div class="field">
+        <label class="label" for="firstname">Firstname</label>
+        <div class="control">
+            <input class="input" type="text" id="firstname" placeholder="Prénom" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="lastname">Lastname</label>
+        <div class="control">
+            <input class="input" type="text" id="lastname" placeholder="Nom" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control">
+            <input class="input" type="email" id="lastname" name="email" placeholder="Email" value="hello@" required>
+        </div>
+    </div>
+
+    <div>
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" placeholder="Bonjour, je vous contacte car...." required></textarea>
+    </div>
+
+</form>
+
+<%- include('./partials/footer') %>
