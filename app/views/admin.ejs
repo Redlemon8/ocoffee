@@ -1,0 +1,61 @@
+<%- include('./partials/header') %>
+
+<form id="form-field" action="" method="POST">
+
+
+    <div class="field">
+        <label class="label" for="name">Nom du produit</label>
+        <div class="control">
+            <input class="input" type="text" id="name" name="name" placeholder="Nom du produit" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="origin">Origin</label>
+        <div class="control">
+            <input class="input" type="text" id="origin" name="origin" placeholder="Origin" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="price_per_kilo">Prix au kilo</label>
+        <div class="control">
+            <input class="input" type="Number" step="any" id="price_per_kilo" name="price_per_kilo" placeholder="Prix au kilo" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="characteristic">Characteristique</label>
+        <div class="control">
+            <input class="input" type="text" id="characteristic" name="characteristic" placeholder="Characteristique" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="available">Disponible</label>
+        <div class="control">
+            <input class="input" type="text" id="available" name="available" placeholder="Disponible" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="reference">Référence</label>
+        <div class="control">
+            <input class="input" type="Number" id="reference" name="reference" placeholder="Référence" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="description">Description</label>
+        <div class="control">
+            <textarea id="message" name="description" placeholder="Description" rows="5" cols="33" required></textarea>
+        </div>
+    </div>
+
+    <div class="field">
+        <button class="anchor-color" type="submit">Valider</button>
+    </div>
+
+</form>
+
+<%- include('./partials/footer') %>

@@ -11,6 +11,8 @@ app.set("views", path.join(import.meta.dirname, "./app/views"));
 
 app.use(express.static(path.join(import.meta.dirname, "public")));
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use(router);
 
 const port = process.env.PORT || 3000;

@@ -1,9 +1,11 @@
 import { Router } from 'express';
 import catalogController from './controlllers/catalogController.js';
 import homeController from './controlllers/homeController.js';
+import adminController from './controlllers/adminController.js';
 
 
 const router = Router();
+
 
 router.get("/", homeController.homePage);
 
@@ -19,6 +21,9 @@ router.get("/produit/:id", homeController.renderOneProduct);
 router.get("/contact", (req, res) => {
   res.render("contact");
 });
+
+router.get("/admin/add", adminController.renderAdminPage);
+router.post("/admin/add", adminController.handleproductForm);
 
 
 router.use((req, res) => {
