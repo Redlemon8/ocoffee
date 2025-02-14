@@ -186,6 +186,8 @@ footer {
     align-items: center;
 }
 
+/** 404 PAGE */
+
 .error-image {
     width: 30%;
 }
@@ -193,6 +195,131 @@ footer {
 #error p {
     color: #F7DCBC;
 }
+
+/** CONTACT PAGE */
+
+/* #form-field {
+    background-color: #F7DCBC;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.field {
+    margin: 1rem;
+}
+
+.label {
+    color: #3E1E04;
+}
+
+textarea, input {
+    color: #F7DCBC;
+    background-color: #3E1E04;
+}
+
+input {
+    height: 1.3rem;
+    width: 10rem;
+} */
+
+:root {
+    --primary-color: #3E1E04;
+    --secondary-color: #F7DCBC;
+    --accent-color: #F49E52;
+  }
+
+#form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espacement entre les champs */
+    max-width: 500px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centrer le formulaire */
+    padding: 2rem;
+    background-color: var(--secondary-color); /* Couleur de fond du formulaire */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column; /* Label au-dessus du champ */
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .control {
+    position: relative; /* Pour positionner l'icône éventuellement */
+  }
+  
+  .input,
+  textarea {
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--primary-color);
+    background-color: #fff; /* Fond blanc pour les champs */
+    transition: border-color 0.3s ease; /* Transition pour la bordure */
+  }
+  
+  .input:focus,
+  textarea:focus {
+    border-color: var(--accent-color);
+    outline: none; /* Supprimer l'outline par défaut au focus */
+    box-shadow: 0 0 5px rgba(var(--accent-color-rgb), 0.2); /* Ombre légère au focus */
+  }
+  
+  textarea {
+    resize: vertical; /* Permettre le redimensionnement vertical du textarea */
+  }
+  
+  .anchor-color {
+    background-color: var(--accent-color);
+    color: #3E1E04;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+   /* button .anchor-color:hover {
+    background-color: darken(var(--accent-color), 20%);
+  } 
+  */
+
+  /* button:hover {
+    transition-duration: 1.8s;
+    transition-property: background-color;
+    background-color: #3E1E04;
+    color: #F7DCBC;
+} */
+
+button:active {
+    box-shadow: 1px 1px 0px black;
+    transform: scale(0.95) translate(5%, 5%);
+}
+  
+  /* Style pour les placeholders (texte d'indication) */
+  ::placeholder {
+    color: #aaa;
+  }
+  
+  /* Optionnel : Style pour les messages d'erreur de validation */
+  .error-message {
+    color: red;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+
 
 @media (min-width: 370px) {
 
@@ -257,7 +384,17 @@ footer {
     #burger-menu {
         display: none;
     }
-    
+
+    #form-field {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        width: 50%;
+    }
+
+    input {
+        width: 18rem; 
+    }
 }
 
 @media (min-width: 765px) {

@@ -1,6 +1,6 @@
-<%- include('./partials/header', { pageStyle: "contact" }) %>
+<%- include('./partials/header') %>
 
-<form action="" method="POST">
+<form id="form-field" action="" method="POST">
     <div class="field">
         <label class="label" for="firstname">Firstname</label>
         <div class="control">
@@ -22,9 +22,14 @@
         </div>
     </div>
 
-    <div>
-        <label for="message">Votre message</label>
-        <textarea id="message" name="message" placeholder="Bonjour, je vous contacte car...." required></textarea>
+    <div class="field">
+        <label class="label" for="message">Votre message</label>
+        <div class="control">
+            <textarea id="message" name="message" placeholder="Votre méssage..." rows="5" cols="33" required></textarea>
+        </div>
+    </div>
+    <div class="field">
+        <button class="anchor-color" type="submit">Envoyer</button>
     </div>
 
 </form>

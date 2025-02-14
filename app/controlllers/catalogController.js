@@ -5,8 +5,8 @@ const catalogController = {
   async catalogPage(req, res) {
     try {
 
+      const threeProductList = await dataMapper.getThreeAvailableRandomProducts();
       const characteristicsProducts = await dataMapper.getCharacteristicsProducts();
-      const threeProductList = await dataMapper.getThreeRandomProducts();
 
       res.render("catalogue", { threeProductList, characteristicsProducts });
 

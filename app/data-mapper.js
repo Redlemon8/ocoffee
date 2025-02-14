@@ -14,12 +14,6 @@ const dataMapper = {
     return characteristicsProducts;
   },
 
-  async getThreeRandomProducts() {
-    const result = await client.query(`SELECT * FROM "product" ORDER BY RANDOM() LIMIT 3`);
-    const threeProductList = result.rows;
-    return threeProductList;
-  },
-
   async getThreeAvailableRandomProducts() {
     const result = await client.query(`SELECT * FROM "product" WHERE available = 'Oui' ORDER BY RANDOM() LIMIT 3`);
     const threeAvailableProducts = result.rows;

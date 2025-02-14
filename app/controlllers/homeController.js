@@ -29,7 +29,7 @@ const homeController = {
         return; 
       }
     
-      res.render("product", { product });
+      res.render("product", { product, productId });
 
     } catch (error) {
       console.log(error);
