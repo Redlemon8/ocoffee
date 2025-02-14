@@ -223,13 +223,13 @@ footer {
     --accent-color: #F49E52;
   }
 
-#form-field {
+  .form-display {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
     max-width: 500px;
-    margin: 0 auto; 
+    margin: 1rem auto; 
     padding: 2rem;
     background-color: var(--secondary-color);
     border-radius: 8px; 
@@ -363,13 +363,6 @@ footer {
         display: none;
     }
 
-    #form-field {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        align-items: center;
-        width: 50%;
-    }
-
     input {
         width: 18rem; 
     }
@@ -442,12 +435,52 @@ footer {
     footer p{
         padding-top: 2rem;
     }
+
+
 }
 
 @media (min-width: 820px) {
+
     #illustration h1 {
         top: 35vh;
     }
+
+                                 /** ADMIN ADD FORM */
+
+    .form-display {
+    max-width: 700px;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    }
+
+    table {
+        margin: auto;
+        background-color: #F7DCBC;
+        color: var(--primary-color);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    th {
+        padding: 2rem;
+    }
+
+    td {
+        padding: 2rem;
+    }
+
+    tr {
+        border-bottom: 1px solid #3E1E04
+    }
+
+    .input {
+        width: 80%;
+    } 
+
+    .field {
+        width: 40%;
+    }    
 }
 
 @media (min-width: 960px) {
@@ -475,6 +508,11 @@ footer {
     .product-display img {
         width: 35%;
     }
+
+    .form-display {
+        max-width: 820px;
+    }
+
 }
 
 @media (min-width: 1366px) {
@@ -490,6 +528,10 @@ footer {
     .about-display, .product-display {
         margin: 0;
         width: 100%;
+    }
+
+    .form-display {
+        max-width: 1000px;
     }
 }
 

@@ -1,0 +1,39 @@
+<%- include('./partials/header') %>
+
+<h2>Supprimer un article</h2>
+
+
+<table class="table-display">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Origine</th>
+        <th>Prix au kilo</th>
+        <th>Characteristique</th>
+        <th>Disponible</th>
+        <th>Référence</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% allProducts.forEach(product => { %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= product.name %></td>
+          <td><%= product.origin %></td>
+          <td><%= product.price_per_kilo %></td>
+          <td><%= product.characteristic %></td>
+          <td><%= product.available %></td>
+          <td><%= product.reference %></td>
+          <td>
+            <form action="/admin/remove" method="POST">  <input type="hidden" name="id" value="<%= product.id %>">
+                <button class="anchor-color" type="submit">Supprimer</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+</table>
+
+<%- include('./partials/footer') %>

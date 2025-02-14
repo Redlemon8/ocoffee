@@ -1,7 +1,8 @@
 <%- include('./partials/header') %>
 
-<form id="form-field" action="" method="POST">
+<h2>Ajouter un article</h2>
 
+<form id="add-form-field" class="form-display" action="" method="POST">
 
     <div class="field">
         <label class="label" for="name">Nom du produit</label>
@@ -45,16 +46,16 @@
         </div>
     </div>
 
-    <div class="field">
-        <label class="label" for="description">Description</label>
-        <div class="control">
-            <textarea id="message" name="description" placeholder="Description" rows="5" cols="33" required></textarea>
+        <div class="field">
+            <label class="label" for="description">Description</label>
+            <div class="control">
+                <textarea id="message" name="description" placeholder="Description" rows="5" cols="33" required></textarea>
+            </div>
         </div>
-    </div>
 
-    <div class="field">
-        <button class="anchor-color" type="submit">Valider</button>
-    </div>
+        <div class="field">
+            <button class="anchor-color" type="submit">Valider</button>
+        </div>
 
 </form>
 

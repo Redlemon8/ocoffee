@@ -36,6 +36,12 @@ const dataMapper = {
       `, [id, name, description, origin, Number(price_per_kilo), characteristic, available, reference]);
     
     return id;
+  },
+
+  async removeProduct(productId) {
+
+    await client.query(`
+      DELETE FROM "product" WHERE "id" = $1`, [productId]);
   }
 };
 

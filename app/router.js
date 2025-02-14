@@ -25,6 +25,9 @@ router.get("/contact", (req, res) => {
 router.get("/admin/add", adminController.renderAdminPage);
 router.post("/admin/add", adminController.handleproductForm);
 
+router.get("/admin/remove", adminController.renderAdminSupressionPage);
+router.post("/admin/remove/", adminController.handleRemoveForm);
+
 
 router.use((req, res) => {
   res.status(404).render("error");
