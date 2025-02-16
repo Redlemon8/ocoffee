@@ -8,15 +8,15 @@ const router = Router();
 
 
 router.get("/", homeController.homePage);
+router.get("/produit/:id", homeController.renderOneProduct);
 
-router.get("/catalogue", catalogController.catalogPage);
-router.get("/catalogue/all", catalogController.catalogList);
+router.get("/catalog", catalogController.catalogPage);
+router.get("/catalog/all", catalogController.catalogList);
+
 
 router.get("/boutique", (req, res) => {
   res.render("about");
 });
-
-router.get("/produit/:id", homeController.renderOneProduct);
 
 router.get("/contact", (req, res) => {
   res.render("contact");

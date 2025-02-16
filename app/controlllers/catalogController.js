@@ -1,17 +1,16 @@
 import dataMapper from "../data-mapper.js";
 
 const catalogController = {
-    
+
   async catalogPage(req, res) {
     try {
 
-      const threeProductList = await dataMapper.getThreeAvailableRandomProducts();
-      const characteristicsProducts = await dataMapper.getCharacteristicsProducts();
+      const characteristics = await dataMapper.getCharacteristicsProducts();
+      const products = await dataMapper.getAllProducts();
 
-      res.render("catalogue", { threeProductList, characteristicsProducts });
-
+      res.render("catalog", { products, characteristics, });
     } catch (error) {
-      console.log(error);
+      console.error(error);
       res.status(500).send("Une erreur s'est produite.");
     }
   },
@@ -28,9 +27,6 @@ const catalogController = {
       res.status(500).send("Une erreur s'est produite.");
     }
 
-    /** 
-      * TODO render only the available items like the home page
-    */
   }
 };
 

@@ -7,11 +7,8 @@
   <link rel="icon" type="image/x-icon" href="/images/logo.ico" />
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
-
-  <% if (typeof pageStyle !== 'undefined') { %>
-    <link rel="stylesheet" href="/css/<%= pageStyle %>.css">
-  <% } %>
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -36,7 +33,7 @@
       </div>
       <ul>
         <li><a href="/">Accueil</a></li>
-        <li><a href="/catalogue">Catalogue</a></li>
+        <li><a href="/catalog">Catalogue</a></li>
         <li><a href="/boutique">Boutique</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>

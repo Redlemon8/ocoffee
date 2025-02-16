@@ -26,6 +26,7 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
+    "emailjs": "^4.0.3",
     "eslint": "^9.20.0",
     "express": "^4.21.2",
     "path": "^0.12.7",
