@@ -8,10 +8,8 @@
     width: 300px;
     margin: auto;
     display: block;
-}
- main {
-    background-color: #3E1E04;
-}
+ }
+
 
  h1, h2, h3, p, a {
     text-align: center;
@@ -54,6 +52,15 @@ button, select{
     height: 3rem;
     font-size: 1.1rem;
 }
+
+td {
+    padding: 0 1rem;
+}
+
+th {
+    width: 20%;
+}
+
 
  /* TODO change over color button
   
@@ -320,6 +327,24 @@ footer {
     font-size: 0.875rem;
   }
 
+  main .remove-items {
+    background-color: #F7DCBC;
+  }
+
+  .remove-items th {
+    margin-top: 1rem;
+  }
+
+  .hidden-td {
+    display: none;
+  }
+
+  .remove-table-picture img {
+    margin: auto;
+    display: block;
+    width: 50%;
+  }
+
 
 
 @media (min-width: 370px) {
@@ -547,6 +572,10 @@ footer {
 
 @media (min-width: 1366px) {
 
+    td {
+        padding: 0;
+    }
+
     html {
         background-color: #fff;
     }
@@ -589,6 +618,10 @@ footer {
 
     .form-display {
         max-width: 1000px;
+    }
+
+    .admin-title {
+        color: var(--primary-color);
     }
 }
 
