@@ -25,6 +25,19 @@ router.get("/contact", (req, res) => {
 router.get("/admin/add", adminController.renderAdminPage);
 router.post("/admin/add", adminController.handleproductForm);
 
+router.post("/upload", (req, res) => {
+  // Get the file that was set to our field named "image"
+  const { image } = req.files;
+
+  // If no image submitted, exit
+  if (!image) return res.sendStatus(400);
+
+  // Move the uploaded image to our upload folder
+  image.mv("public/images/coffees/" + image.name);
+
+  res.redirect("/admin/add");
+});
+
 router.get("/admin/remove", adminController.renderAdminSupressionPage);
 router.post("/admin/remove/", adminController.handleRemoveForm);
 

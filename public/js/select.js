@@ -1,41 +1,41 @@
-initSeeMoreProductsButton();
-initCategoryFilter();
+// initSeeMoreProductsButton();
+// initCategoryFilter();
 
-function initSeeMoreProductsButton() {
-  const selectAllProducts = document.getElementById("select-all-products");
-  selectAllProducts.addEventListener("click", showAllSelectedProducts);  
-}
+// function initSeeMoreProductsButton() {
+//   const selectAllProducts = document.getElementById("select-all-products");
+//   selectAllProducts.addEventListener("click", showAllSelectedProducts);  
+// }
 
-function initCategoryFilter() {
-  const category = document.getElementById("category");
-  category.addEventListener("change", (event) => {
-    const categoryId = event.target.value;
+// function initCategoryFilter() {
+//   const category = document.getElementById("category");
+//   category.addEventListener("change", (event) => {
+//     const categoryId = event.target.value;
 
-    const allProducts = document.querySelectorAll("");
-    allProducts.forEach(section => section.classList.remove("hidden"));
+//     const allProducts = document.querySelectorAll("");
+//     allProducts.forEach(section => section.classList.remove("hidden"));
 
-    if (categoryId === "*") { 
-      return; 
-    }
+//     if (categoryId === "*") { 
+//       return; 
+//     }
   
-    allProducts.forEach(section => {
-      if (section.dataset.categoryId !== categoryId) {
-        section.classList.add("hidden");
-      }
-    });
+//     allProducts.forEach(section => {
+//       if (section.dataset.categoryId !== categoryId) {
+//         section.classList.add("hidden");
+//       }
+//     });
 
-    showAllSelectedProducts();
-  });
-}
+//     showAllSelectedProducts();
+//   });
+// }
 
 
-function showAllSelectedProducts() {
-  const discoverContainer = document.getElementById("discover-container");
-  discoverContainer.classList.remove("items-container");
+// function showAllSelectedProducts() {
+//   const discoverContainer = document.getElementById("discover-container");
+//   discoverContainer.classList.remove("items-container");
 
-  const selectAllProducts = document.getElementById("select-all-products");
-  if (! selectAllProducts) { 
-    return; 
-  }
-  selectAllProducts.remove();
-}
+//   const selectAllProducts = document.getElementById("select-all-products");
+//   if (! selectAllProducts) { 
+//     return; 
+//   }
+//   selectAllProducts.remove();
+// }
