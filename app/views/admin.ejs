@@ -63,9 +63,11 @@
 
 <form class="form-display" action="/upload" method="POST" enctype="multipart/form-data">
     <div class="field">
-        <input type="file" name="image" />
-        <button type="submit">Upload</button>
+        <label for="image"></label>
+        <input type="file" name="image" aria-label="image"/>
+        <button type="submit">Télécharger</button>
     </div>
 </form>
 
 <%- include('./partials/footer') %>
+
