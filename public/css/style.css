@@ -53,6 +53,10 @@ button, select{
     font-size: 1.1rem;
 }
 
+button.anchor-color.table {
+    margin: 0.4rem 0.2rem;
+}
+
 td {
     padding: 0 1rem;
 }
@@ -60,6 +64,20 @@ td {
 th {
     width: 20%;
 }
+
+tbody {
+    height: 1rem;
+}
+
+tr {
+    font-size: 0.8rem;
+    height: 0.5rem;
+    border-bottom: 1px solid #3E1E04
+}
+
+.hidden-td {
+    display: none;
+  }
 
 
  /* TODO change over color button
@@ -215,7 +233,6 @@ footer {
     appearance: none;
 }
 
-
 #discover-container .items-container section:nth-child(n+4) {
     display: none;
   }
@@ -332,10 +349,6 @@ footer {
     margin-top: 1rem;
   }
 
-  .hidden-td {
-    display: none;
-  }
-
   .remove-table-picture img {
     margin: auto;
     display: block;
@@ -376,6 +389,10 @@ footer {
     #illustration h1 {
         top: 25vh;
     }
+
+    .hidden-td {
+        display: block;
+    }
 }
 
 @media (min-width: 720px) {
@@ -410,6 +427,11 @@ footer {
 
     input {
         width: 18rem; 
+    }
+
+
+    tr {
+        font-size: 1rem;
     }
 }
 
@@ -512,18 +534,6 @@ footer {
         text-align: center;
     }
 
-    th {
-        padding: 2rem;
-    }
-
-    td {
-        padding: 2rem;
-    }
-
-    tr {
-        border-bottom: 1px solid #3E1E04
-    }
-
     .input {
         width: 80%;
     } 
@@ -623,6 +633,9 @@ footer {
 }
 
 @media (min-width: 1920px) {
+
+    
+
     #illustration h1 {
         top: 65vh;
     }

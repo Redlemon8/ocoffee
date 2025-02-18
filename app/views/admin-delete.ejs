@@ -6,13 +6,9 @@
 <table class="table-display remove-items">
     <thead>
       <tr>
-        <th>Photo</th>
-        <th>ID</th>
         <th>Nom</th>
-        <th class="hidden-td">Origine</th>
-        <th class="hidden-td">Prix au kilo</th>
-        <th class="hidden-td">Characteristique</th>
-        <th class="hidden-td">Disponible</th>
+        <th>Prix/kilo</th>
+        <th>Disponible</th>
         <th class="hidden-td">Référence</th>
         <th>Actions</th>
       </tr>
@@ -20,22 +16,13 @@
     <tbody>
       <% allProducts.forEach(product => { %>
         <tr>
-          <td>
-            <picture class="remove-table-picture">
-              <source srcset="/images/coffees/<%= product.reference %>.webp" type="image/webp">
-              <source srcset="/images/coffees/<%= product.reference %>.png" type="image/png">
-              <img src="/images/coffees/<%= product.reference %>.png" alt="Grains de café d'Italie">
-            </picture></td>
-          <td><%= product.id %></td>
           <td><%= product.name %></td>
-          <td class="hidden-td"><%= product.origin %></td>
-          <td class="hidden-td"><%= product.price_per_kilo %></td>
-          <td class="hidden-td"><%= product.characteristic %></td>
-          <td class="hidden-td"><%= product.available %></td>
+          <td><%= product.price_per_kilo %></td>
+          <td><%= product.available %></td>
           <td class="hidden-td"><%= product.reference %></td>
           <td>
             <form action="/admin/remove" method="POST">  <input type="hidden" name="id" value="<%= product.id %>">
-                <button class="anchor-color" type="submit">Supprimer</button>
+                <button class="anchor-color table" type="submit">Supprimer</button>
             </form>
           </td>
         </tr>
