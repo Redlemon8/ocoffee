@@ -211,17 +211,13 @@ footer {
     align-items: center;
 }
 
-
-#discover-container .items-container section:nth-child(n+4) {
-    display: none
+#discover-container select {
+    appearance: none;
 }
 
-#dicover-container select {
-    margin-top: 5rem;
-    width: 100%;
-    max-width: 30rem;
-  
-    appearance: none;
+
+#discover-container .items-container section:nth-child(n+4) {
+    display: none;
   }
   
   #discover-container .hidden {
@@ -234,6 +230,7 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+
 
 /** 404 PAGE */
 
@@ -450,7 +447,7 @@ footer {
         color: #3E1E04;
     }
 
-    .items-container {
+    .items-to-show {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

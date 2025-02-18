@@ -1,41 +1,42 @@
-// initSeeMoreProductsButton();
-// initCategoryFilter();
+handleAllProducts();
+handleCategorySelected();
 
-// function initSeeMoreProductsButton() {
-//   const selectAllProducts = document.getElementById("select-all-products");
-//   selectAllProducts.addEventListener("click", showAllSelectedProducts);  
-// }
 
-// function initCategoryFilter() {
-//   const category = document.getElementById("category");
-//   category.addEventListener("change", (event) => {
-//     const categoryId = event.target.value;
+function handleAllProducts() {
+  const selectAllProducts = document.getElementById('select-all-products');
+  selectAllProducts.addEventListener('click', showAllProducts);
+}
 
-//     const allProducts = document.querySelectorAll("");
-//     allProducts.forEach(section => section.classList.remove("hidden"));
+function handleCategorySelected() {
+  const categorySelect = document.getElementById("category");
+  categorySelect.addEventListener("change", (event) => {
+    const selectedCharacteristic = event.target.value;
 
-//     if (categoryId === "*") { 
-//       return; 
-//     }
+    const allProducts = document.querySelectorAll(".items-box");
+
+    allProducts.forEach(product => {
+      const productCharacteristic = product.dataset.coffeeCharacteristic;
+
+      if (selectedCharacteristic === "" || productCharacteristic === selectedCharacteristic) {
+        product.classList.remove("hidden");
+      } else {
+        product.classList.add("hidden");
+      }
+    });
+
+    showAllProducts();
+  });
+}
+
+function showAllProducts() {
   
-//     allProducts.forEach(section => {
-//       if (section.dataset.categoryId !== categoryId) {
-//         section.classList.add("hidden");
-//       }
-//     });
+  const showAll = document.getElementById('show-all');
+  showAll.classList.remove('items-container');
 
-//     showAllSelectedProducts();
-//   });
-// }
+  const selectAllProducts = document.getElementById("select-all-products");
+  if (! selectAllProducts) { 
 
-
-// function showAllSelectedProducts() {
-//   const discoverContainer = document.getElementById("discover-container");
-//   discoverContainer.classList.remove("items-container");
-
-//   const selectAllProducts = document.getElementById("select-all-products");
-//   if (! selectAllProducts) { 
-//     return; 
-//   }
-//   selectAllProducts.remove();
-// }
+    return; 
+  }
+  selectAllProducts.remove();
+}

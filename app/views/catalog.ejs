@@ -20,7 +20,7 @@
     <div id="category">
       <label for="characteristic" method="GET" ></label>
           <select class="characteristic" name="characteristic" id="characteristic" aria-label="Selectionnez l'origine">
-          <option value="<%=  %>">Catégorie</option>
+          <option value="*">Catégorie</option>
 
         <% characteristics.forEach(coffe => { %>
           <option value="<%= coffe.characteristic %>"><%= coffe.characteristic %></option>
@@ -29,10 +29,10 @@
         </select>
     </div>
 
-    <section class="items-container brown">
+    <section id="show-all" class="items-container items-to-show brown">
 
       <% products.forEach(oneProduct => { %>
-        <section class="items-box">
+        <section class="items-box" data-coffee-characteristic="<%= oneProduct.characteristic %>">
           <h3><%= oneProduct.name %></h3>
           <picture>
             <source srcset="/images/coffees/<%= oneProduct.reference %>.webp" type="image/webp">
@@ -46,7 +46,7 @@
 
     </section>
     <div>
-      <button id="select-all-products" class="select-all"><a href="/catalog/all"> Voir tout</a></button>
+      <button id="select-all-products" class="select-all">Voir tout</button>
     </div>
   </section>
 
