@@ -355,6 +355,14 @@ footer {
     width: 50%;
   }
 
+  .contact {
+    margin: 2rem 0;
+  }
+
+  .contact p {
+    color: var(--secondary-color);
+  }
+
 
 
 @media (min-width: 370px) {
@@ -627,14 +635,12 @@ footer {
         max-width: 1000px;
     }
 
-    .admin-title {
+    .color-title, .contact p{
         color: var(--primary-color);
     }
 }
 
 @media (min-width: 1920px) {
-
-    
 
     #illustration h1 {
         top: 65vh;

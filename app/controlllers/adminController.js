@@ -5,7 +5,7 @@ const adminController = {
   async renderAdminPage(req, res) {
     try {
         
-      res.render("admin");
+      res.render("admin-add");
 
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ const adminController = {
         
       const allProducts = await dataMapper.getAllProducts();
 
-      res.render("admin-delete", { allProducts });
+      res.render("admin-remove", { allProducts });
 
     } catch (error) {
       console.log(error);
