@@ -1,29 +1,57 @@
 
 <%- include('./partials/header') %>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "tvzR-3ZTCtS0KM7Xx",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact_form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_v1b41ia', 'template_e1akjsv', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        window.location.reload();
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+
+<%- include('./partials/banner') %>
+
 <div class="script-container" data-script="map"></div>
 
 <h2 class="color-title">Contact</h2>
 
-<form id="form-field"  class="form-display" action="" method="POST">
+<form id="contact_form"  class="form-display" action="" method="POST">
     <div class="field">
-        <label class="label" for="firstname">Firstname</label>
+        <input type="hidden" name="contact_number" value="697483">
+        <label class="label" name="from_name" for="firstname">Prénom</label>
         <div class="control">
-            <input class="input" type="text" id="firstname" placeholder="Prénom" required>
+            <input class="input" type="text" name="name" id="firstname" placeholder="Prénom" required>
         </div>
     </div>
 
     <div class="field">
-        <label class="label" for="lastname">Lastname</label>
+        <label class="label" for="lastname">Nom</label>
         <div class="control">
-            <input class="input" type="text" id="lastname" placeholder="Nom" required>
+            <input class="input" type="text" name="lastname" id="lastname" placeholder="Nom" required>
         </div>
     </div>
 
     <div class="field">
         <label class="label" for="email">Email</label>
         <div class="control">
-            <input class="input" type="email" id="lastname" name="email" placeholder="Email" value="hello@" required>
+            <input class="input" type="email" id="lastname" name="to_email" placeholder="Email" required>
         </div>
     </div>
 
@@ -34,7 +62,7 @@
         </div>
     </div>
     <div class="field">
-        <button class="anchor-color" type="submit">Envoyer</button>
+        <button class="anchor-color" type="submit" value="Send">Envoyer</button>
     </div>
 
 </form>
