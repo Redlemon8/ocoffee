@@ -371,6 +371,12 @@ footer {
     background-color: black;
   }
 
+  .admin-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 
 
 @media (min-width: 370px) {
@@ -397,6 +403,10 @@ footer {
         top: 19vh;
         height: 2rem;
         width: 100%;
+    }
+
+    .admin-button {
+        margin-top: 6rem;
     }
 }
 
@@ -556,7 +566,12 @@ footer {
 
     .field {
         width: 40%;
-    }    
+    } 
+    
+    .admin-button {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 960px) {

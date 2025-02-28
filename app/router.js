@@ -29,6 +29,7 @@ router.post("/register", authController.registerUser);
 router.get("/login", authController.renderLoginPage);
 router.post("/login", authController.loginUser);
 
+router.get("/admin", adminController.renderAdminPage);
 router.get("/admin/add", adminController.renderAdminAddingPage);
 router.post("/admin/add", adminController.handleproductForm);
 

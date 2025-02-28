@@ -53,7 +53,7 @@ const authController = {
     await dataMapper.addUser(user_name, email, hash);
     
 
-    res.render("admin-add", { successMessage: "Veuillez à présent vous authentifier." });
+    res.render("login", { successMessage: "Veuillez à présent vous authentifier." });
 
   },
 
@@ -101,7 +101,7 @@ const authController = {
 
       req.session.userId = user.id;
 
-      res.redirect("/admin/add");
+      res.redirect("/admin");
       
 
     } catch (error) {

@@ -3,6 +3,11 @@ import dataMapper from "../data-mapper.js";
 
 const adminController = {
 
+  renderAdminPage(req, res) {
+
+    res.render("admin");
+  },
+
     
   async renderAdminAddingPage(req, res) {
     try {
