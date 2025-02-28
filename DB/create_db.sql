@@ -1,6 +1,7 @@
 -- Product
 
 DROP TABLE IF EXISTS "product";
+DROP TABLE IF EXISTS "user";
 
 CREATE TABLE "product" (
     "id" SERIAL PRIMARY KEY,
@@ -32,3 +33,15 @@ INSERT INTO "product"("id", "name", "description", "origin", "price_per_kilo", "
 (14, 'Peruvian Arabica', 'Café équilibré avec des notes de chocolat, une acidité modérée et un corps velouté.', 'Pérou', 19.40, 'Chocolaté', 'Non', 954589100),
 (15, 'Hawaiian Kona', 'Café rare au goût riche, une acidité douce et des nuances subtiles.', 'Hawaï', 55.75, 'Doux', 'Non', 958090105),
 (16, 'Nicaraguan Maragogipe', 'Café avec des notes de fruits, une acidité vive et un corps plein.', 'Nicaragua', 28.60, 'Fruité', 'Non', 691550753);
+
+
+CREATE TABLE "user" (
+    "id" SERIAL PRIMARY KEY,
+    "user_name" VARCHAR(100) UNIQUE NOT NULL,
+    "email" TEXT UNIQUE NOT NULL,
+    "password" TEXT NOT NULL,
+    "role" TEXT
+);
+
+INSERT INTO "user"("id", "user_name", "email", "password", "role") VALUES
+(1, 'Jean', 'pepper-brothers@gmail.com', '$argon2id$v=19$m=65536,t=3,p=4$blvQNIlniTOF5rvdgTqxRw$XJiLCOeETtj0M7CiPDUIQhX7f0PRu3utbYsFvehoIn4', 'admin');
