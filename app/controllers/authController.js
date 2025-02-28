@@ -16,23 +16,15 @@ const authController = {
   },
 
   async registerUser(req, res) {
-    // Récupérer les données du body dans une/plusieurs variables (Condition : vérifier la présence du body parser en amont du controlleur)
-    // firstname, lastname, email, password, confirm
+   
     const { user_name, email, password, confirm } = req.body;
-    // console.log({ firstname, lastname, email, password, confirm });
-
-    // Vérifier que tous les champs sont présents
+  
     if (!user_name || !email || !password || !confirm) {
       // --> sinon : 400 (Bad Request)
       res.status(400).render("register", { errorMessage: "Tous les champs sont obligatoires." });
       return;
     }
 
-    // Vérifier que le format des champs est le bon (CF - S12 - Body validation)
-    // --> sinon : 400 (Bad Request)
-
-    // Vérifier que le mot de passe et sa confirmation matchent !
-    // --> sinon : 400 (Bad Request)
     if (password !== confirm) {
       return res.status(400).render("register", { errorMessage: "Le mot de passe et sa confirmation ne correspondent pas." });
     }
@@ -61,11 +53,8 @@ const authController = {
     await dataMapper.addUser(user_name, email, hash);
     
 
-    // Rediriger vers /login
     res.render("admin-add", { successMessage: "Veuillez à présent vous authentifier." });
 
-    // Autre option pour le redirect avec un message de succès
-    // res.redirect("/login?successMessage=Veuillez à présent vous authentifier.");
   },
 
   renderLoginPage(req, res) {
@@ -85,10 +74,9 @@ const authController = {
 
     try {
 
-      // Récupérer l'email et le mot de passe fourni depuis req.body
+
       const { email, password } = req.body;
 
-      // Valider la présence des champs -> sinon 400
       if (! email || ! password) {
         return res.status(400).render("login", { errorMessage: "Tous les champs sont obligatoires." });
       }
@@ -100,16 +88,13 @@ const authController = {
         return res.status(400).render("login", { errorMessage: "L'email et le mot de passe fournis ne correspondent pas." });
       }
 
-      // mot de passe en clair : req.body.password
+     
       const rawPassword = password;
 
-      // mot de passe haché stocké : user.password
       const hashedPassword = user.password;
 
-      // on compare les deux à l'aide de la fonction argon2.verify() --> true/false
       const isMatching = await argon2.verify(hashedPassword, rawPassword);
       
-      // Si les mots de passe ne match pas --> 400 : message d'erreur (rester vague) + RETURN
       if (! isMatching) {
         return res.status(400).render("login", { errorMessage: "L'email et le mot de passe fournis ne correspondent pas." });
       }

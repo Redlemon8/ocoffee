@@ -33,13 +33,11 @@ router.get("/admin/add", adminController.renderAdminAddingPage);
 router.post("/admin/add", adminController.handleproductForm);
 
 router.post("/upload", (req, res) => {
-  // Get the file that was set to our field named "image"
+
   const { image } = req.files;
 
-  // If no image submitted, exit
   if (!image) return res.sendStatus(400);
 
-  // Move the uploaded image to our upload folder
   image.mv("public/images/coffees/" + image.name);
 
   res.redirect("/admin/add");
@@ -51,7 +49,6 @@ router.post("/admin/remove/", adminController.handleRemoveForm);
 
 router.use((req, res) => {
   res.status(404).render("error");
-  console.log('je suis le middleware 404');
 });
 
 export default router;
