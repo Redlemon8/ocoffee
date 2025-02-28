@@ -22,7 +22,8 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-router.get("/admin/add", adminController.renderAdminPage);
+router.get("/admin", adminController.renderAdminPage);
+router.get("/admin/add", adminController.renderAdminAddingPage);
 router.post("/admin/add", adminController.handleproductForm);
 
 router.post("/upload", (req, res) => {

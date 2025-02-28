@@ -2,7 +2,19 @@ import dataMapper from "../data-mapper.js";
 
 
 const adminController = {
-  async renderAdminPage(req, res) {
+
+  renderAdminPage(req, res) {
+    try {
+        
+      res.render("admin");
+
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Une erreur s'est produite."); 
+    }
+  },
+
+  async renderAdminAddingPage(req, res) {
     try {
         
       res.render("admin-add");
