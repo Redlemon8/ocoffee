@@ -1,6 +1,32 @@
 <%- include('./partials/header') %>
 <%- include('./partials/banner') %>
 
+<div class="height-body">
 
+    <h2 class="color-title" >Connexion</h2>
+
+<form id="add-form-field" class="form-display" action="" method="POST">
+
+    <div class="field">
+        <label class="label" for="user-name">Nom</label>
+        <div class="control">
+            <input class="input" type="text" id="user-name" name="user-name" placeholder="Nom" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control">
+            <input class="input" type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <button class="anchor-color" type="submit">Valider</button>
+    </div>
+
+</form>
+
+</div>
 
 <%- include('./partials/footer') %>

@@ -189,6 +189,9 @@ footer {
     background-color: #F7DCBC;
 }
 
+.height-body {
+    min-height: 56vh;
+}
 
 /** HOME PAGE */
 
