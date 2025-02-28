@@ -50,14 +50,14 @@ const dataMapper = {
     return user;
   },
 
-  async addUser(user_name, email, password) {
+  async addUser(user_name, email, password, role = "visitor") {
     const result = await client.query(`SELECT MAX("id") FROM "user"`);
     const id = result.rows[0].max + 1;
 
     await client.query(`
-      INSERT INTO "user" ("id", "user_name", "email", "password")
-      VALUES ($1, $2, $3, $4)
-      `, [id, user_name, email, password]);
+      INSERT INTO "user" ("id", "user_name", "email", "password", "role")
+      VALUES ($1, $2, $3, $4, $5)
+      `, [id, user_name, email, password, role]);
     
     return id;
   },
