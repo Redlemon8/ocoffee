@@ -366,6 +366,11 @@ footer {
     color: var(--secondary-color);
   }
 
+  .alert {
+    border: 1px solid #F49E52;
+    background-color: black;
+  }
+
 
 
 @media (min-width: 370px) {

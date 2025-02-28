@@ -42,7 +42,25 @@ const dataMapper = {
 
     await client.query(`
       DELETE FROM "product" WHERE "id" = $1`, [productId]);
-  }
+  },
+
+  async getOneUser(userEmail) {
+    const result = await client.query(`SELECT * FROM "user" WHERE "email" = $1`, [userEmail]);
+    const user = result.rows[0];
+    return user;
+  },
+
+  async addUser(user_name, email, password) {
+    const result = await client.query(`SELECT MAX("id") FROM "user"`);
+    const id = result.rows[0].max + 1;
+
+    await client.query(`
+      INSERT INTO "user" ("id", "user_name", "email", "password")
+      VALUES ($1, $2, $3, $4)
+      `, [id, user_name, email, password]);
+    
+    return id;
+  },
 };
 
 export default dataMapper;

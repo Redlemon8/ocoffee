@@ -4,6 +4,8 @@ import express from 'express';
 import router from './app/router.js';
 import path from "node:path";
 import fileUpload from "express-fileupload";
+import { sessionSetup } from './app/middlewares/session-setup.middlewares.js';
+
 
 const app = express();
 
@@ -15,6 +17,8 @@ app.use(fileUpload());
 app.use(express.static(path.join(import.meta.dirname, "public")));
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use(sessionSetup);
 
 app.use(router);
 

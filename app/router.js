@@ -1,7 +1,8 @@
 import { Router } from 'express';
-import catalogController from './controlllers/catalogController.js';
-import homeController from './controlllers/homeController.js';
-import adminController from './controlllers/adminController.js';
+import catalogController from './controllers/catalogController.js';
+import homeController from './controllers/homeController.js';
+import adminController from './controllers/adminController.js';
+import authController from './controllers/authController.js';
 
 
 const router = Router();
@@ -22,8 +23,12 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-router.get("/admin", adminController.renderAdminPage);
-router.post("/admin", adminController.renderAdminPage);
+router.get("/register", authController.renderRegisterPage);
+router.post("/register", authController.registerUser);
+
+router.get("/login", authController.renderLoginPage);
+router.post("/login", authController.loginUser);
+
 router.get("/admin/add", adminController.renderAdminAddingPage);
 router.post("/admin/add", adminController.handleproductForm);
 
@@ -46,6 +51,7 @@ router.post("/admin/remove/", adminController.handleRemoveForm);
 
 router.use((req, res) => {
   res.status(404).render("error");
+  console.log('je suis le middleware 404');
 });
 
 export default router;
