@@ -23,6 +23,7 @@ router.get("/contact", (req, res) => {
 });
 
 router.get("/admin", adminController.renderAdminPage);
+router.post("/admin", adminController.renderAdminPage);
 router.get("/admin/add", adminController.renderAdminAddingPage);
 router.post("/admin/add", adminController.handleproductForm);
 
