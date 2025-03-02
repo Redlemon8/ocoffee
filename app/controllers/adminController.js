@@ -1,6 +1,5 @@
 import dataMapper from "../data-mapper.js";
 
-
 const adminController = {
 
   renderAdminPage(req, res) {

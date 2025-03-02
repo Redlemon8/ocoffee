@@ -74,7 +74,6 @@ const authController = {
 
     try {
 
-
       const { email, password } = req.body;
 
       if (! email || ! password) {
@@ -106,9 +105,15 @@ const authController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send(error.message); 
+      res.status(500).send(error.message);
     }
   },
+
+  async logoutUser(req, res) {
+    req.session.destroy();
+
+    res.redirect("/");
+  }
 };
 
 export default authController;

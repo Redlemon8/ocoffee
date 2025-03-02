@@ -367,14 +367,31 @@ footer {
   }
 
   .alert {
-    border: 1px solid #F49E52;
-    background-color: black;
-  }
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+    .alert-danger {
+        background-color: #e74444;
+    }
+
+    .alert-success {
+        background-color: rgb(54, 229, 54);
+    }
 
   .admin-button {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .logout {
+    background-color: #F49E52;
+    color: #3E1E04;
+    padding: 1rem 2rem;
   }
 
 

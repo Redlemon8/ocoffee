@@ -21,6 +21,18 @@
         <li><a href="/catalog">Catalogue</a></li>
         <li><a href="/boutique">Boutique</a></li>
         <li><a href="/contact">Contact</a></li>
+
+        <li><% if (locals.user) {%>
+
+          <% if (locals.user.role === 'admin') { %>
+            <a class="logout" href="/register">Inscription</a></li>
+          <% } %>
+
+          <li><a class="logout" href="/logout">Se déconnecter</a></li>
+
+          <% } else { %>
+            <li><a class="logout" href="/login">Se connecter</a></li>
+        <% } %>
       </ul>
     </nav>
   </header>

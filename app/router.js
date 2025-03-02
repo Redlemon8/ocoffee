@@ -3,6 +3,8 @@ import catalogController from './controllers/catalogController.js';
 import homeController from './controllers/homeController.js';
 import adminController from './controllers/adminController.js';
 import authController from './controllers/authController.js';
+import { isAuthed } from './middlewares/isAuthed.middleware.js';
+import { isAdmin } from './middlewares/isAdmin.middleware.js';
 
 
 const router = Router();
@@ -23,15 +25,18 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-router.get("/register", authController.renderRegisterPage);
+router.get("/register", isAdmin, authController.renderRegisterPage);
 router.post("/register", authController.registerUser);
 
 router.get("/login", authController.renderLoginPage);
 router.post("/login", authController.loginUser);
+router.get("/logout", authController.logoutUser);
 
-router.get("/admin", adminController.renderAdminPage);
-router.get("/admin/add", adminController.renderAdminAddingPage);
-router.post("/admin/add", adminController.handleproductForm);
+router.get("/admin", isAuthed, adminController.renderAdminPage);
+router.get("/admin/remove", isAuthed, adminController.renderAdminSupressionPage);
+router.post("/admin/remove/", isAuthed, adminController.handleRemoveForm);
+router.get("/admin/add", isAuthed, adminController.renderAdminAddingPage);
+router.post("/admin/add", isAuthed, adminController.handleproductForm);
 
 router.post("/upload", (req, res) => {
 
@@ -43,9 +48,6 @@ router.post("/upload", (req, res) => {
 
   res.redirect("/admin/add");
 });
-
-router.get("/admin/remove", adminController.renderAdminSupressionPage);
-router.post("/admin/remove/", adminController.handleRemoveForm);
 
 
 router.use((req, res) => {

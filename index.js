@@ -5,6 +5,7 @@ import router from './app/router.js';
 import path from "node:path";
 import fileUpload from "express-fileupload";
 import { sessionSetup } from './app/middlewares/session-setup.middlewares.js';
+import { loadLoggedUserInLocals } from './app/middlewares/load-user-locals.middleware.js';
 
 
 const app = express();
@@ -19,6 +20,8 @@ app.use(express.static(path.join(import.meta.dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(sessionSetup);
+
+app.use(loadLoggedUserInLocals);
 
 app.use(router);
 
