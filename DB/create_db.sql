@@ -44,4 +44,4 @@ CREATE TABLE "user" (
 );
 
 INSERT INTO "user"("id", "user_name", "email", "password", "role") VALUES
-(1, 'Jean', 'pepper-brothers@gmail.com', 'JaimeLeCafé123', 'admin');
+(1, 'Jean', 'pepper-brothers@gmail.com', '$argon2id$v=19$m=65536,t=3,p=4$T+XmuYpd4ri/2bktS6gOrg$PQ0fQw3RcETTXF9K/xqCmLf1XZ3eZpVPEizB0RWdHoo', 'admin');
