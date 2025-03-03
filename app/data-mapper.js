@@ -57,7 +57,7 @@ const dataMapper = {
     return user;
   },
 
-  async addUser(user_name, email, password, role = "visitor") {
+  async addUser(user_name, email, password, role = "visiteur") {
     const result = await client.query(`SELECT MAX("id") FROM "user"`);
     const id = result.rows[0].max + 1;
 

@@ -17,9 +17,9 @@ const authController = {
 
   async registerUser(req, res) {
    
-    const { user_name, email, password, confirm } = req.body;
+    const { user_name, email, password, confirm, role } = req.body;
   
-    if (!user_name || !email || !password || !confirm) {
+    if (!user_name || !email || !password || !confirm || !role) {
       // --> sinon : 400 (Bad Request)
       res.status(400).render("register", { errorMessage: "Tous les champs sont obligatoires." });
       return;
@@ -50,7 +50,7 @@ const authController = {
 
     const hash = await argon2.hash(password);
 
-    await dataMapper.addUser(user_name, email, hash);
+    await dataMapper.addUser(user_name, email, hash, role);
     
 
     res.render("login", { successMessage: "Veuillez à présent vous authentifier." });

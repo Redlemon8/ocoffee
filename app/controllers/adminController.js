@@ -10,7 +10,7 @@ const adminController = {
     
   async renderAdminAddingPage(req, res) {
     try {
-        
+      
       res.render("admin-add");
 
     } catch (error) {
@@ -21,13 +21,20 @@ const adminController = {
 
   async handleproductForm(req, res) {
     try {
-        
+  
+      
       const { name, description, origin, price_per_kilo, characteristic, available, reference } = req.body;
       Number(price_per_kilo);
+      
+      if (!name || !description || !origin || !price_per_kilo || !characteristic || !available || !reference) {
+        // --> sinon : 400 (Bad Request)
+        res.status(400).render("admin-add", { errorMessage: "Tous les champs sont obligatoires." });
+        return;
+      }
 
       await dataMapper.addProduct(name, description, origin, price_per_kilo, characteristic, available, reference);
       
-      res.redirect("/admin/add");
+      res.render("admin-add", { successMessage: "Produit ajouté avec succés" });
 
     } catch (error) {
       console.log(error);

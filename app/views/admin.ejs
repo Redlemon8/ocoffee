@@ -4,9 +4,13 @@
 <div class="height-body">
 
     <h2 class="color-title" >Menu</h2>
+    <p class="log-status">Vous êtes connecté en tant que : <%= locals.user.role %></p>
     <div class="admin-button">
-        <button><a href="/admin/add">Ajouter un article</a></button></a>
-        <button><a href="/admin/remove">Suprimer un article</a></button></a>
+        <button><a href="/admin/add">Ajouter un article</a></button>
+        <button><a href="/admin/remove">Suprimer un article</a></button>
+        <% if (locals.user.role === 'admin') { %>
+            <button><a href="/register">Créer un compte</a></button>
+        <% } %>
     </div>
 
 </div>

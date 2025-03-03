@@ -2,73 +2,103 @@
 <script defer src="/js/validation.js"></script>
 <%- include('./partials/banner') %>
 
-
+   
 <h2 class="color-title" >Ajouter un article</h2>
+
+<% if (locals.errorMessage) { %>
+    <div class="alert alert-danger" role="alert">
+      <%= errorMessage %>
+    </div>
+  <% } %>
+
+  <!-- Toast en cas de succès  -->
+  <% if (locals.successMessage) { %>
+    <div class="alert alert-success" role="alert">
+      <%= successMessage %>
+    </div>
+  <% } %>
 
 <form id="add-form-field" class="form-display" action="" method="POST">
 
-    <div class="field">
-        <label class="label" for="name">Nom du produit</label>
-        <div class="control">
-            <input class="input" type="text" id="name" name="name" placeholder="Nom du produit" required>
-        </div>
-    </div>
-
-    <div class="field">
-        <label class="label" for="origin">Origin</label>
-        <div class="control">
-            <input class="input" type="text" id="origin" name="origin" placeholder="Origin" required>
-        </div>
-    </div>
-
-    <div class="field">
-        <label class="label" for="price_per_kilo">Prix au kilo</label>
-        <div class="control">
-            <input class="input" type="Number" step="any" id="price_per_kilo" name="price_per_kilo" placeholder="Prix au kilo" required>
-        </div>
-    </div>
-
-    <div class="field">
-        <label class="label" for="characteristic">Characteristique</label>
-        <div class="control">
-            <input class="input" type="text" id="characteristic" name="characteristic" placeholder="Characteristique" required>
-        </div>
-    </div>
-
-    <div class="field">
-        <label class="label" for="available">Disponible</label>
-        <div class="control">
-            <input class="input" type="text" id="available" name="available" placeholder="Disponible" required>
-        </div>
-    </div>
-
-    <div class="field">
-        <label class="label" for="reference">Référence</label>
-        <div class="control">
-            <input class="input" type="Number" id="reference" name="reference" placeholder="Référence" required>
-        </div>
-    </div>
-
+            <div class="field">
+                <label class="label" for="name">Nom du produit</label>
+                <div class="control">
+                    <input class="input admin-form-field" type="text" id="name" name="name" placeholder="Nom du produit">
+                </div>
+            </div>
         <div class="field">
-            <label class="label" for="description">Description</label>
+            <label class="label" for="origin">Origin</label>
             <div class="control">
-                <textarea id="message" name="description" placeholder="Description" rows="5" cols="33" required></textarea>
+                <input class="input admin-form-field" type="text" id="origin" name="origin" placeholder="Origin">
             </div>
         </div>
 
         <div class="field">
-            <button class="anchor-color" type="submit">Valider</button>
+            <label class="label" for="price_per_kilo">Prix au kilo</label>
+            <div class="control">
+                <input class="input admin-form-field" type="Number" step="any" id="price_per_kilo" name="price_per_kilo" placeholder="Prix au kilo">
+            </div>
         </div>
 
+        <div class="field">
+            <label class="label" for="characteristic">Characteristique</label>
+            <div class="control">
+                <input class="input admin-form-field" type="text" id="characteristic" name="characteristic" placeholder="Characteristique">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="available">Disponible</label>
+            <div class="control">
+                <input class="input admin-form-field" type="text" id="available" name="available" placeholder="Disponible">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="reference">Référence</label>
+            <div class="control">
+                <input class="input admin-form-field" type="Number" id="reference" name="reference" placeholder="Référence">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="description">Description</label>
+            <div class="control">
+                <textarea id="message" name="description" placeholder="Description" rows="5" cols="33" class="admin-form-field"></textarea>
+            </div>
+        </div>
+        <% if (locals.user.role === "visiteur") { %>
+            <div class="field">
+                <button id="notAllowed" class="anchor-color disabled" type="">Indisponible</button>
+            </div>
+        <% } else {%>
+            <div class="field">
+                <button class="anchor-color" type="submit">Valider</button>
+            </div>
+        <% } %>
 </form>
 
 <form class="form-display" action="/upload" method="POST" enctype="multipart/form-data">
-    <div class="field">
-        <label for="image"></label>
-        <input type="file" name="image" aria-label="image"/>
-        <button type="submit">Télécharger</button>
-    </div>
+    <% if (locals.user.role === "visiteur") { %>
+        <div class="field">
+            <label for="image"></label>
+            <input type="file" name="image" aria-label="image"/>
+
+            <button id="picturenotAllowed" class="disabled" type="">Indisponible</button>
+        </div>
+
+    <% } else  { %>
+
+        <div class="field">
+            <label for="image"></label>
+            <input type="file" name="image" aria-label="image"/>
+
+            <button type="submit">Télécharger</button>
+        </div>
+
+    <% } %>
 </form>
+
 
 <%- include('./partials/footer') %>
 

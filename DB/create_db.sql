@@ -37,7 +37,7 @@ INSERT INTO "product"("id", "name", "description", "origin", "price_per_kilo", "
 
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
-    "user_name" VARCHAR(100) UNIQUE NOT NULL,
+    "user_name" VARCHAR(100) NOT NULL,
     "email" TEXT UNIQUE NOT NULL,
     "password" TEXT NOT NULL,
     "role" TEXT

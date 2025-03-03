@@ -17,21 +17,28 @@
         <div class="bar"></div>
       </div>
       <ul>
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/catalog">Catalogue</a></li>
-        <li><a href="/boutique">Boutique</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <% if (!locals.user) { %>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/catalog">Catalogue</a></li>
+            <li><a href="/boutique">Boutique</a></li>
+            <li><a href="/contact">Contact</a></li>
+        <% } else { 
 
-        <li><% if (locals.user) {%>
+            if (locals.user) {
 
-          <% if (locals.user.role === 'admin') { %>
-            <a class="logout" href="/register">Inscription</a></li>
-          <% } %>
-
-          <li><a class="logout" href="/logout">Se déconnecter</a></li>
-
-          <% } else { %>
-            <li><a class="logout" href="/login">Se connecter</a></li>
+                if (locals.user.role === 'admin') { %>
+                    <li><a class="logout" href="/">Accueil</a></li>
+                    <li><a href="/admin">Menu</a></li>
+                    <li><a class="logout" href="/register">Inscription</a></li>
+                    <li><a class="logout" href="/logout">Se déconnecter</a></li>
+                <% } else { %>
+                    <li><a class="logout" href="/">Accueil</a></li>
+                    <li><a href="/admin">Menu</a></li>
+                    <li><a class="logout" href="/logout">Se déconnecter</a></li>
+                <% } %>
+            <% } else { %>
+                <li><a class="logout" href="/login">Se connecter</a></li>
+            <% } %>
         <% } %>
       </ul>
     </nav>

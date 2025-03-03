@@ -40,13 +40,22 @@ router.post("/admin/add", isAuthed, adminController.handleproductForm);
 
 router.post("/upload", (req, res) => {
 
-  const { image } = req.files;
+  
+  try {
+    const image = req.files;
+    if (!image) {
+      res.status(400).render("admin-add", { errorMessage: "Veuillez séléctionner une image" });
+    }
 
-  if (!image) return res.sendStatus(400);
+    image.mv("public/images/coffees/" + image.name);
 
-  image.mv("public/images/coffees/" + image.name);
+    res.redirect("/admin/add");
+    
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Une erreur s'est produite.");
+  }
 
-  res.redirect("/admin/add");
 });
 
 
