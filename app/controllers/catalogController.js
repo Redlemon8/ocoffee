@@ -11,7 +11,7 @@ const catalogController = {
       res.render("catalog", { products, characteristics, });
     } catch (error) {
       console.error(error);
-      res.status(500).send("Une erreur s'est produite.");
+      res.status(500).render("500");
     }
   },
 };

@@ -5,9 +5,10 @@ export const loadLoggedUserInLocals = async (req, res, next) => {
     try {
       const user = await dataMapper.getUserId(req.session.userId);
       res.locals.user = user; 
-      
+
     } catch (error) {
-      console.error("Erreur lors du chergement de l'utilisateur: ", error);
+      console.error(error);
+      res.status(500).render("500");
     }
   }
   next();

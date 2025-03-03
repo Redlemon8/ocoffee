@@ -15,7 +15,7 @@ const adminController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send("Une erreur s'est produite."); 
+      res.status(500).render("500"); 
     }
   },
 
@@ -38,7 +38,7 @@ const adminController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send("Une erreur s'est produite."); 
+      res.status(500).render("500"); 
     }
   },
 
@@ -51,7 +51,7 @@ const adminController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send("Une erreur s'est produite."); 
+      res.status(500).render("500"); 
     }
   },
 
@@ -59,8 +59,6 @@ const adminController = {
     try {
         
       const productId = Number(req.body.id);
-      console.log(productId);
-
 
       await dataMapper.removeProduct(productId);
 
@@ -69,7 +67,7 @@ const adminController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send(error.message); 
+      res.status(500).render("500"); 
     }
   },
 
@@ -82,7 +80,7 @@ const adminController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send("Une erreur s'est produite."); 
+      res.status(500).render("500"); 
     }
   },
 
@@ -100,21 +98,15 @@ const adminController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send("Une erreur s'est produite."); 
+      res.status(500).render("500"); 
     }
   },
 
   async handleUpdateProduct(req, res) {
     try {
-
-      console.log('je suis dans le controller handleUpdateProduct');
-      console.log('req.params.id:', req.params.id);
-      console.log('req.body:', req.body);
       const { id, name, description, origin, price_per_kilo, characteristic, available, reference } = req.body;
-      console.log(id);
       if (!id || isNaN(Number(id))) {
-        console.log(id);
-        return res.status(400).send("ID de produit invalide.");
+        return res.status(400).render("product-to-update", { errorMessage: "Le produit n'existe pas !" });;
       }
   
       const updateFields = {};
@@ -132,7 +124,7 @@ const adminController = {
   
     } catch (error) {
       console.error(error);
-      res.status(500).send("Erreur lors de la mise à jour du produit.");
+      res.status(500).render("500");
     }
   }
 };

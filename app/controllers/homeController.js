@@ -12,7 +12,7 @@ const homeController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send("Une erreur s'est produite.");
+      res.status(500).render("500");
     }
   },
 
@@ -33,7 +33,7 @@ const homeController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).send("Une erreur s'est produite.");
+      res.status(500).render("500");
     }
   }
 };

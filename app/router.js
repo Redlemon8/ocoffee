@@ -55,14 +55,14 @@ router.post("/upload", (req, res) => {
     
   } catch (error) {
     console.error(error);
-    res.status(500).send("Une erreur s'est produite.");
+    res.status(500).render("500");
   }
 
 });
 
 
 router.use((req, res) => {
-  res.status(404).render("error");
+  res.status(404).render("404");
 });
 
 export default router;
