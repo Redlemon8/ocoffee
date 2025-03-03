@@ -1,0 +1,31 @@
+<%- include('./partials/header') %>
+<%- include('./partials/banner') %>
+
+
+<!-- MAIN -->
+<!-- ILLUSTRATION SECTION -->
+
+<!-- NEW PRODUCT SECTION -->
+  <section id="product-list-container">
+    <h2 class="color-title">Inventaire</h2>
+
+    <section id="show-all" class="items-container items-to-show brown">
+
+      <% allProducts.forEach(oneProduct => { %>
+        <section class="items-box" data-coffee-characteristic="<%= oneProduct.characteristic %>">
+          <h3><%= oneProduct.name %></h3>
+          <picture>
+            <source srcset="/images/coffees/<%= oneProduct.reference %>.webp" type="image/webp">
+            <source srcset="/images/coffees/<%= oneProduct.reference %>.png" type="image/png">
+            <img src="/images/coffees/<%= oneProduct.reference %>.png" alt="Image de café d'origine <%= oneProduct.origin %>">
+          </picture>
+          <p>Caractéristique principale : <%= oneProduct.characteristic %></p>
+          <button class="anchor-color"><a href="/admin/update/<%= oneProduct.id %>">Modifier</a></button>
+        </section>
+      <% }); %>
+
+    </section>
+  </section>
+
+
+<%- include('./partials/footer') %>

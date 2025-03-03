@@ -14,7 +14,6 @@ router.get("/", homeController.homePage);
 router.get("/produit/:id", homeController.renderOneProduct);
 
 router.get("/catalog", catalogController.catalogPage);
-router.get("/catalog/all", catalogController.catalogList);
 
 
 router.get("/boutique", (req, res) => {
@@ -37,6 +36,9 @@ router.get("/admin/remove", isAuthed, adminController.renderAdminSupressionPage)
 router.post("/admin/remove/", isAuthed, adminController.handleRemoveForm);
 router.get("/admin/add", isAuthed, adminController.renderAdminAddingPage);
 router.post("/admin/add", isAuthed, adminController.handleproductForm);
+router.get("/admin/update", isAuthed, adminController.renderAdminUpdatePage);
+router.get("/admin/update/:id", isAuthed, adminController.renderProductToUpdate);
+router.post("/admin/update/:id", isAuthed, adminController.handleUpdateProduct);
 
 router.post("/upload", (req, res) => {
 

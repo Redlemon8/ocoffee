@@ -435,6 +435,14 @@ footer {
     cursor: not-allowed;
   }
 
+  .product-display.product-update {
+    padding: 3rem 0;
+  }
+
+  .admin-form-field {
+    margin: 1.5rem;
+  }
+
 @media (min-width: 370px) {
 
     #logo {

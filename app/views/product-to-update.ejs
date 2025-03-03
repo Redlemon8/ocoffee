@@ -1,0 +1,50 @@
+<%- include('./partials/header') %>
+<%- include('./partials/banner') %>
+
+<!-- PRODUCT SHEET -->
+
+<form id="add-form-field" class="form-display" action="" method="POST">
+    <input type="hidden" name="id" value="<%= product.id %>">
+    <div class="field">
+        <label class="label" for="name">Nom</label>
+        <div class="control">
+            <input class="input admin-form-field" type="text" id="name" name="name" placeholder="<%= product.name %>">
+        </div>
+    </div>
+    <picture>
+        <source srcset="/images/coffees/<%= product.reference %>.webp" type="image/webp">
+        <source srcset="/images/coffees/<%= product.reference %>.png" type="image/png">
+        <img src="/images/coffees/<%= product.reference %>.png" alt="Image de café d'origine <%= product.origin %>">
+    </picture>
+    <div class="field">
+        <label class="label" for="description">Description</label>
+        <div class="control">
+            <textarea id="message" name="description" placeholder="<%= product.description %>" rows="5" cols="33" class="admin-form-field"></textarea>
+        </div>
+    </div>
+    <div class="field">
+        <label class="label" for="origin">Origin</label>
+        <div class="control">
+            <input class="input admin-form-field" type="text" id="origin" name="origin" placeholder="<%= product.origin %>">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label" for="price_per_kilo">Prix au kilo</label>
+        <div class="control">
+            <input class="input admin-form-field" type="Number" step="any" id="price_per_kilo" name="price_per_kilo" placeholder="<%= product.price_per_kilo %>">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label" for="characteristic">Characteristique</label>
+        <div class="control">
+            <input class="input admin-form-field" type="text" id="characteristic" name="characteristic" placeholder="<%= product.characteristic %>">
+        </div>
+    </div>
+
+    <div class="field">
+        <button class="anchor-color" type="submit">Valider</button>
+    </div>
+</form>
+
+
+<%- include('./partials/footer') %>

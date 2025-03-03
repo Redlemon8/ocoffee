@@ -44,6 +44,17 @@ const dataMapper = {
       DELETE FROM "product" WHERE "id" = $1`, [productId]);
   },
 
+  async updateProduct(id, updateFields) {
+    const fields = Object.keys(updateFields).map((field, index) => `"${field}" = $${index + 2}`).join(", ");
+    const values = Object.values(updateFields);
+  
+    await client.query(`
+      UPDATE "product"
+      SET ${fields}
+      WHERE "id" = $1
+    `, [id, ...values]);
+  },
+
   async getOneUser(userEmail) {
     const result = await client.query(`SELECT * FROM "user" WHERE "email" = $1`, [userEmail]);
     const user = result.rows[0];
