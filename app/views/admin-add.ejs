@@ -1,8 +1,10 @@
 <%- include('./partials/header') %>
 <script defer src="/js/validation.js"></script>
+<script defer src="/js/restriction.js"></script>
 <%- include('./partials/banner') %>
 
-   
+<div class="toast-alert" id="toast">En tant que visiteur, vous n'êtes pas autorisé à mener cette action !</div>
+
 <h2 class="color-title" >Ajouter un article</h2>
 
 <% if (locals.errorMessage) { %>
@@ -69,7 +71,7 @@
         </div>
         <% if (locals.user.role === "visiteur") { %>
             <div class="field">
-                <button id="notAllowed" class="anchor-color disabled" type="">Indisponible</button>
+                <button class="visitor anchor-color table" type="submit">Supprimer</button>
             </div>
         <% } else {%>
             <div class="field">
@@ -84,7 +86,7 @@
             <label for="image"></label>
             <input type="file" name="image" aria-label="image"/>
 
-            <button id="picturenotAllowed" class="disabled" type="">Indisponible</button>
+            <button class="visitor anchor-color table" type="submit">Supprimer</button>
         </div>
 
     <% } else  { %>

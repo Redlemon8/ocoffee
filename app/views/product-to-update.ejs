@@ -1,7 +1,9 @@
 <%- include('./partials/header') %>
+<script defer src="/js/restriction.js"></script>
 <%- include('./partials/banner') %>
 
 <!-- PRODUCT SHEET -->
+<div class="toast-alert" id="toast">En tant que visiteur, vous n'êtes pas autorisé à mener cette action !</div>
 
 <form id="add-form-field" class="form-display" action="" method="POST">
     <input type="hidden" name="id" value="<%= product.id %>">
@@ -41,9 +43,16 @@
         </div>
     </div>
 
-    <div class="field">
-        <button class="anchor-color" type="submit">Valider</button>
-    </div>
+    <% if (locals.user.role === "visiteur") { %>
+        <div class="field">
+            <button class="visitor anchor-color table" type="submit">Supprimer</button>
+        </div>
+    <% } else {%>
+        <div class="field">
+            <button class="anchor-color" type="submit">Valider</button>
+        </div>
+    <% } %>
+
 </form>
 
 

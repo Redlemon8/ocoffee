@@ -27,7 +27,7 @@ const adminController = {
       Number(price_per_kilo);
       
       if (!name || !description || !origin || !price_per_kilo || !characteristic || !available || !reference) {
-        // --> sinon : 400 (Bad Request)
+        
         res.status(400).render("admin-add", { errorMessage: "Tous les champs sont obligatoires." });
         return;
       }
@@ -104,10 +104,12 @@ const adminController = {
 
   async handleUpdateProduct(req, res) {
     try {
+
       const { id, name, description, origin, price_per_kilo, characteristic, available, reference } = req.body;
       if (!id || isNaN(Number(id))) {
-        return res.status(400).render("product-to-update", { errorMessage: "Le produit n'existe pas !" });;
+        return res.status(400).render("product-to-update", { errorMessage: "Le produit n'existe pas !" });
       }
+
   
       const updateFields = {};
       if (name) updateFields.name = name;
@@ -120,7 +122,7 @@ const adminController = {
   
       await dataMapper.updateProduct(id, updateFields);
   
-      res.redirect("/admin/update");
+      res.redirect(`/admin/update/${id}`);
   
     } catch (error) {
       console.error(error);

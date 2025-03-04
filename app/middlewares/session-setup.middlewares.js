@@ -5,7 +5,8 @@ export const sessionSetup = session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 1 * 60 * 60 * 1000, // 1H
-    secure: false // HTTP en local
+    maxAge: 60 * 60 * 1000,
+    secure: false // HTTP en local --> En prod: secure: proces.env.NODE_ENV === 'production'
+    //httpOnly: true,
   } 
 });

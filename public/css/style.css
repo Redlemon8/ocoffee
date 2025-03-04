@@ -426,15 +426,6 @@ footer {
     color: var(--secondary-color);
   }
 
-  .disabled {
-    background-color: #cccccc;
-    color: #666666;
-  }
-
-  .disabled:hover {
-    cursor: not-allowed;
-  }
-
   .product-display.product-update {
     padding: 3rem 0;
   }
