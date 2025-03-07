@@ -2,6 +2,8 @@ import dataMapper from "../data-mapper.js";
 
 const catalogController = {
 
+  // Display the characteristic product to the category selector
+  // And give all products list when the show all button is clicked
   async catalogPage(req, res) {
     try {
 

@@ -37,11 +37,19 @@
       <% products.forEach(oneProduct => { %>
         <section class="items-box" data-coffee-characteristic="<%= oneProduct.characteristic %>">
           <h3><%= oneProduct.name %></h3>
-          <picture>
-            <source srcset="/images/coffees/<%= oneProduct.reference %>.webp" type="image/webp">
-            <source srcset="/images/coffees/<%= oneProduct.reference %>.png" type="image/png">
-            <img src="/images/coffees/<%= oneProduct.reference %>.png" alt="Image de café d'origine <%= oneProduct.origin %>">
-          </picture>
+          <% if (oneProduct.available === "Oui") { %>
+            <picture>
+              <source srcset="/images/coffees/<%= oneProduct.reference %>.webp" type="image/webp">
+              <source srcset="/images/coffees/<%= oneProduct.reference %>.png" type="image/png">
+              <img src="/images/coffees/<%= oneProduct.reference %>.png" alt="Image de café d'origine <%= oneProduct.origin %>">
+            </picture>
+          <% } else { %>
+            <picture>
+              <source srcset="/images/coffees/<%= oneProduct.reference %>-non-available.webp" type="image/webp">
+              <source srcset="/images/coffees/<%= oneProduct.reference %>non-available.png" type="image/png">
+              <img src="/images/coffees/<%= oneProduct.reference %>non-available.png" alt="Image de café d'origine <%= oneProduct.origin %>">
+            </picture>
+          <% } %>
           <p>Caractéristique principale : <%= oneProduct.characteristic %></p>
           <button class="anchor-color"><a href="/produit/<%= oneProduct.id %>">Découvrir</a></button>
         </section>

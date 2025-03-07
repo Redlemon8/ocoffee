@@ -11,7 +11,7 @@ import { loadLoggedUserInLocals } from './app/middlewares/load-user-locals.middl
 const app = express();
 
 app.set("view engine", "ejs");
-app.set("views", path.join(import.meta.dirname, "./app/views"));
+app.set("views", path.join(import.meta.dirname, "./views"));
 
 app.use(fileUpload());
 

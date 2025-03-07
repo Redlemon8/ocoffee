@@ -1,5 +1,6 @@
 import dataMapper from "../data-mapper.js";
 
+// Load user's info in locals without his password 
 export const loadLoggedUserInLocals = async (req, res, next) => {
   if (req.session.userId) {
     try {

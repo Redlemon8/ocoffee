@@ -1,6 +1,7 @@
 
 <%- include('./partials/header') %>
 
+<!-- Script emailJs -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
@@ -29,9 +30,11 @@
 
 <%- include('./partials/banner') %>
 
-
+<div class="toast-alert" id="toast">En tant que visiteur, vous n'êtes pas autorisé à mener cette action !</div>
 
 <h2 class="color-title">Contact</h2>
+
+<div class="toast-success" id="toast-success">En tant que visiteur, vous n'êtes pas autorisé à mener cette action !</div>
 
 <form id="contact_form"  class="form-display" action="" method="POST">
     <div class="field">
@@ -52,7 +55,7 @@
     <div class="field">
         <label class="label" for="email">Email</label>
         <div class="control">
-            <input class="input" type="email" id="lastname" name="to_email" placeholder="Email" required>
+            <input class="input" type="email" id="email" name="to_email" placeholder="Email" required>
         </div>
     </div>
 
@@ -63,7 +66,7 @@
         </div>
     </div>
     <div class="field">
-        <button class="anchor-color" type="submit" value="Send">Envoyer</button>
+        <button class="contact-field anchor-color" type="submit" value="Send">Envoyer</button>
     </div>
 
 </form>

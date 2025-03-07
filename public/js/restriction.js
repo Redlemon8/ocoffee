@@ -1,5 +1,8 @@
+// Gestion Toast erreur coté client section admin 
+
 const visitors = document.querySelectorAll(".visitor");
 const toast = document.getElementById("toast");
+
 
 visitors.forEach(visitor => {
   visitor.addEventListener("click", restrictedAction);
@@ -12,3 +15,10 @@ function restrictedAction(event) {
     toast.style.display = "none";
   }, 3000);
 }
+
+
+
+
+
+
+

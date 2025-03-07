@@ -1,3 +1,4 @@
+//Middleware to block access to the users not loged
 export function isAuthed(req, res, next) {
 
   if (! req.session.userId) {

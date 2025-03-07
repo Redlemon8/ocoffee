@@ -1,5 +1,5 @@
 import session from "express-session";
-
+// Session setup middleware
 export const sessionSetup = session({
   secret: process.env.SESSION_SECRET,
   resave: false,

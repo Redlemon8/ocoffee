@@ -2,6 +2,7 @@ import dataMapper from "../data-mapper.js";
 
 const homeController = {
 
+  // Display the home page with 3 available products
   async homePage(req, res) {
 
     try {
@@ -16,6 +17,7 @@ const homeController = {
     }
   },
 
+  // Display the product page with the product ID selected from the home page
   async renderOneProduct(req, res) {
 
     try {

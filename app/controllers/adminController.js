@@ -2,12 +2,13 @@ import dataMapper from "../data-mapper.js";
 
 const adminController = {
 
+  // Display the Admin Home Page
   renderAdminPage(req, res) {
 
     res.render("admin");
   },
 
-    
+  // Display Admin page to add product to the db
   async renderAdminAddingPage(req, res) {
     try {
 
@@ -19,6 +20,8 @@ const adminController = {
     }
   },
 
+  // Method to add a product to the db
+  // Result will be used by addProduct's Method into the data-mapper 
   async handleproductForm(req, res) {
     try {
   
@@ -42,6 +45,7 @@ const adminController = {
     }
   },
 
+  // Display Admin page to remove product from the db
   async renderAdminSupressionPage(req, res) {
     try {
         
@@ -51,16 +55,22 @@ const adminController = {
 
     } catch (error) {
       console.log(error);
-      res.status(500).render("500"); 
+      res.status(500).render("500");
     }
   },
 
+  // Method to add product to the db
+  // Result will be used by removeProduct's Method into the data-mapper
   async handleRemoveForm(req, res) {
     try {
         
       const productId = Number(req.body.id);
 
       await dataMapper.removeProduct(productId);
+
+      if (!productId) {
+        res.status(404).render({ errorMessage: "Le produit n'existe pas !"});
+      }
 
       res.redirect("/admin/remove");
       
@@ -71,6 +81,7 @@ const adminController = {
     }
   },
 
+  // Display Admin page to select the product to update
   async renderAdminUpdatePage(req, res) {
     try {
         
@@ -84,6 +95,7 @@ const adminController = {
     }
   },
 
+  // Display Product page to update
   async renderProductToUpdate(req, res) {
     try {
       const productId = req.params.id;
@@ -102,6 +114,8 @@ const adminController = {
     }
   },
 
+  // Method to update product to the db
+  // Result will be used by updateProduct's Method into the data-mapper
   async handleUpdateProduct(req, res) {
     try {
 
