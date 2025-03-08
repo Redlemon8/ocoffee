@@ -3,7 +3,13 @@
 <%- include('./partials/banner') %>
 
 <!-- PRODUCT SHEET -->
+ <h2 class="color-title">Fiche produit</h2>
 <div class="toast-alert" id="toast">En tant que visiteur, vous n'êtes pas autorisé à mener cette action !</div>
+<% if (locals.errorMessage) { %>
+    <div class="alert alert-danger" role="alert">
+      <%= errorMessage %>
+    </div>
+  <% } %>
 
 <form id="add-form-field" class="form-display" action="" method="POST">
     <input type="hidden" name="id" value="<%= product.id %>">

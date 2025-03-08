@@ -119,6 +119,7 @@ const adminController = {
   async handleUpdateProduct(req, res) {
     try {
 
+
       const { id, name, description, origin, price_per_kilo, characteristic, available, reference } = req.body;
       if (!id || isNaN(Number(id))) {
         return res.status(400).render("product-to-update", { errorMessage: "Le produit n'existe pas !" });
@@ -133,6 +134,15 @@ const adminController = {
       if (characteristic) updateFields.characteristic = characteristic;
       if (available !== undefined) updateFields.available = available;
       if (reference) updateFields.reference = reference;
+
+      console.log(updateFields);
+      console.log(typeof updateFields);
+
+      if(Object.keys(updateFields).length === 0) {
+        
+        const product = await dataMapper.getOneProduct(id);
+        return res.status(400).render("product-to-update", { product, errorMessage: "Aucun champ n'a été rempli !" });
+      }
   
       await dataMapper.updateProduct(id, updateFields);
   
