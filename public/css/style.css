@@ -9,12 +9,12 @@
     --accent-color: #F49E52;
 }
 
- #map { 
-    height: 300px; 
-    width: 300px;
-    margin: auto;
-    display: block;
- }
+#map { 
+height: 50vh; 
+width: 80vw;
+margin: auto;
+display: block;
+}
 
 
  h1, h2, h3, p, a {
@@ -570,13 +570,6 @@ main .remove-items {
     footer p{
         padding-top: 2rem;
     }
-
-    #map { 
-        height: 300px; 
-        width: 500px;
-    }
-
-
 }
 
 @media (min-width: 820px) {
@@ -619,6 +612,11 @@ main .remove-items {
 @media (min-width: 960px) {
     #illustration h1 {
         top: 37vh;
+    }
+
+    #map {
+        height: 600px;
+        width: 800px
     }
 }
 
