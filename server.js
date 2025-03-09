@@ -6,6 +6,8 @@ import path from "node:path";
 import fileUpload from "express-fileupload";
 import { sessionSetup } from './app/middlewares/session-setup.middlewares.js';
 import { loadLoggedUserInLocals } from './app/middlewares/load-user-locals.middleware.js';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 
 const app = express();
@@ -13,6 +15,10 @@ const app = express();
 app.set("trust proxy", 1);
 
 app.set("view engine", "ejs");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+app.set("views", path.join(__dirname, "views"));
+
 app.set("views", path.join(__dirname, "views"));
 
 app.use(fileUpload());
