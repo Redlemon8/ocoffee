@@ -22,6 +22,6 @@ Vous pouvez accéder à cette partie via la route `https://ocoffee-production-15
 - email : `bienvenue@vous.com`
 - mot de passe : `VisiteurO'coffee2025`
 
-## Accéssibilité & bonne paratique
+## Accéssibilité & bonnes paratiques
 
-![](./public/images/lighthouse.png);
+![](./public/images/lighthouse.png)
