@@ -21,3 +21,7 @@ O'Coffee est un site web développé dans le cadre d'un projet de formation de l
 Vous pouvez accéder à cette partie via la route `https://ocoffee-production-157d.up.railway.app/login` et vous connecter avec les identifiants `visiteur` suivant :
 - email : `bienvenue@vous.com`
 - mot de passe : `VisiteurO'coffee2025`
+
+## Accéssibilité & bonne paratique
+
+![](./public/images/lighthouse.png);
