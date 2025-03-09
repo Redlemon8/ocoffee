@@ -24,6 +24,7 @@
       <label for="characteristic" method="GET" ></label>
           <select class="anchor-color characteristic" name="characteristic" id="characteristic" aria-label="Selectionnez l'origine">
           <option value="*">Catégorie</option>
+          <option value="*">Tout</option>
 
         <% characteristics.forEach(coffe => { %>
           <option value="<%= coffe.characteristic %>"><%= coffe.characteristic %></option>
@@ -37,7 +38,7 @@
       <% products.forEach(oneProduct => { %>
         <section class="items-box" data-coffee-characteristic="<%= oneProduct.characteristic %>">
           <h3><%= oneProduct.name %></h3>
-          <% if (oneProduct.available === "Oui") { %>
+          <% if (oneProduct.available === true) { %>
             <picture>
               <source srcset="/images/coffees/<%= oneProduct.reference %>.webp" type="image/webp">
               <source srcset="/images/coffees/<%= oneProduct.reference %>.png" type="image/png">

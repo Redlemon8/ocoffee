@@ -21,7 +21,7 @@ const dataMapper = {
 
   // Query db to get 3 available products used to the homeController
   async getThreeAvailableRandomProducts() {
-    const result = await client.query(`SELECT * FROM "product" WHERE available = 'Oui' ORDER BY RANDOM() LIMIT 3`);
+    const result = await client.query(`SELECT * FROM "product" WHERE available = TRUE ORDER BY RANDOM() LIMIT 3`);
     const threeAvailableProducts = result.rows;
     return threeAvailableProducts;
   },

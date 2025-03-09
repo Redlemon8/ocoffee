@@ -1,42 +1,46 @@
 handleAllProducts();
 handleCategorySelected();
 
-
 function handleAllProducts() {
   const selectAllProducts = document.getElementById('select-all-products');
-  selectAllProducts.addEventListener('click', showAllProducts);
+  selectAllProducts.addEventListener('click', toggleProducts);
 }
 
 function handleCategorySelected() {
   const categorySelect = document.getElementById("category");
   categorySelect.addEventListener("change", (event) => {
     const selectedCharacteristic = event.target.value;
-
     const allProducts = document.querySelectorAll(".items-box");
+    let visibleProductsCount = 0;
 
     allProducts.forEach(product => {
       const productCharacteristic = product.dataset.coffeeCharacteristic;
 
-      if (selectedCharacteristic === "" || productCharacteristic === selectedCharacteristic) {
+      if (selectedCharacteristic === "*" || productCharacteristic === selectedCharacteristic) {
         product.classList.remove("hidden");
       } else {
         product.classList.add("hidden");
       }
     });
 
-    showAllProducts();
+    updateButtonText(visibleProductsCount === allProducts.length);
+
+    const showAll = document.getElementById('show-all');
+    showAll.classList.remove('items-container');
   });
 }
 
-function showAllProducts() {
-  
+function toggleProducts() {
   const showAll = document.getElementById('show-all');
-  showAll.classList.remove('items-container');
+  showAll.classList.toggle('items-container');
 
+  const isVisible = showAll.classList.contains('items-container');
+  updateButtonText(isVisible);
+}
+
+function updateButtonText(isVisible) {
   const selectAllProducts = document.getElementById("select-all-products");
-  if (! selectAllProducts) { 
+  // if (!selectAllProducts) return;
 
-    return; 
-  }
-  selectAllProducts.remove();
+  selectAllProducts.textContent = isVisible ? 'Voir tout' : 'Voir moins';
 }
