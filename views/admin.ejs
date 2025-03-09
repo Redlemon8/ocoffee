@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+<%- include('./partials/banner') %>
+
+<div class="height-body">
+
+    <h2 class="color-title" >Menu</h2>
+    <p class="log-status">Vous êtes connecté en tant que : <%= locals.user.role %></p>
+    <div class="admin-button">
+        <button><a href="/admin/add">Ajouter</a></button>
+        <button><a href="/admin/update">Modifier</a></button>
+        <button><a href="/admin/remove">Suprimer</a></button>
+        <% if (locals.user.role === 'admin') { %>
+            <button><a href="/register">Membre</a></button>
+        <% } %>
+    </div>
+
+</div>
+
+
+<%- include('./partials/footer') %>

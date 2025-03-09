@@ -1,0 +1,19 @@
+<%- include('./partials/header') %>
+<%- include('./partials/banner') %>
+
+<!-- PRODUCT SHEET -->
+
+<section class="items-box brown product-display">
+  <h3><%= product.name %></h3>
+  <picture>
+    <source srcset="/images/coffees/<%= product.reference %>.webp" type="image/webp">
+    <source srcset="/images/coffees/<%= product.reference %>.png" type="image/png">
+    <img src="/images/coffees/<%= product.reference %>.png" alt="Image de café d'origine <%= product.origin %>">
+  </picture>
+  <p>Description : <%= product.description %></p>
+  <p>Origine : <%= product.origin %></p>
+  <p>Prix au kilo : <%= product.price_per_kilo %> €</p>
+  <p>Caractéristique principale : <%= product.characteristic %></p>
+</section>
+
+<%- include('./partials/footer') %>

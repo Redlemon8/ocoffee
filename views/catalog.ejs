@@ -1,0 +1,66 @@
+<%- include('./partials/header') %>
+<script defer src="js/select.js"></script>
+<%- include('./partials/banner') %>
+
+
+<!-- MAIN -->
+<!-- ILLUSTRATION SECTION -->
+    <section id="illustration">
+      <picture>
+        <source srcset="/images/nathan-dumlao-6VhPY27jdps-unsplash.webp" type="image/webp">
+        <source srcset="/images/nathan-dumlao-6VhPY27jdps-unsplash.jpg" type="image/jpg">
+        <img src="/images/nathan-dumlao-6VhPY27jdps-unsplash.jpg" alt="Image de trois café partagé entre amis">
+      </picture>
+      <div id="illustration-title">
+        <h1>O'coffee</h1>
+      </div>
+    </section>
+
+
+<!-- NEW PRODUCT SECTION -->
+  <section id="discover-container">
+    <h2>Catalogue</h2>
+    <div id="category">
+      <label for="characteristic" method="GET" ></label>
+          <select class="anchor-color characteristic" name="characteristic" id="characteristic" aria-label="Selectionnez l'origine">
+          <option value="*">Catégorie</option>
+          <option value="*">Tout</option>
+
+        <% characteristics.forEach(coffe => { %>
+          <option value="<%= coffe.characteristic %>"><%= coffe.characteristic %></option>
+        <% }) %>
+
+        </select>
+    </div>
+
+    <section id="show-all" class="items-container items-to-show brown">
+
+      <% products.forEach(oneProduct => { %>
+        <section class="items-box" data-coffee-characteristic="<%= oneProduct.characteristic %>">
+          <h3><%= oneProduct.name %></h3>
+          <% if (oneProduct.available === true) { %>
+            <picture>
+              <source srcset="/images/coffees/<%= oneProduct.reference %>.webp" type="image/webp">
+              <source srcset="/images/coffees/<%= oneProduct.reference %>.png" type="image/png">
+              <img src="/images/coffees/<%= oneProduct.reference %>.png" alt="Image de café d'origine <%= oneProduct.origin %>">
+            </picture>
+          <% } else { %>
+            <picture>
+              <source srcset="/images/coffees/<%= oneProduct.reference %>-non-available.webp" type="image/webp">
+              <source srcset="/images/coffees/<%= oneProduct.reference %>non-available.png" type="image/png">
+              <img src="/images/coffees/<%= oneProduct.reference %>non-available.png" alt="Image de café d'origine <%= oneProduct.origin %>">
+            </picture>
+          <% } %>
+          <p>Caractéristique principale : <%= oneProduct.characteristic %></p>
+          <button class="anchor-color"><a href="/produit/<%= oneProduct.id %>">Découvrir</a></button>
+        </section>
+      <% }); %>
+
+    </section>
+    <div>
+      <button id="select-all-products" class="anchor-color select-all">Voir tout</button>
+    </div>
+  </section>
+
+
+<%- include('./partials/footer') %>

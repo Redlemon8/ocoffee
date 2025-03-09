@@ -1,0 +1,46 @@
+</head>
+<body>
+
+  <!-- BANNER -->
+  <header id="banner" class="brown">
+    <a id="logo-anchor" href="/">
+      <div id="logo">
+        <img id="logo-image" src="/images/logo.svg" alt="Grains de café, Logo o'coffee" >
+        <h2>O'coffee</h2>
+      </div>
+    </a>
+    <nav id="main-nav">
+      <div id="burger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul>
+        <% if (!locals.user) { %>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/catalog">Catalogue</a></li>
+            <li><a href="/boutique">Boutique</a></li>
+            <li><a href="/contact">Contact</a></li>
+        <% } else { 
+
+            if (locals.user) {
+
+                if (locals.user.role === 'admin') { %>
+                    <li><a class="logout" href="/">Accueil</a></li>
+                    <li><a href="/admin">Menu</a></li>
+                    <li><a class="logout" href="/register">Inscription</a></li>
+                    <li><a class="logout" href="/logout">Se déconnecter</a></li>
+                <% } else { %>
+                    <li><a class="logout" href="/">Accueil</a></li>
+                    <li><a href="/admin">Menu</a></li>
+                    <li><a class="logout" href="/logout">Se déconnecter</a></li>
+                <% } %>
+            <% } else { %>
+                <li><a class="logout" href="/login">Se connecter</a></li>
+            <% } %>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
+  <main>

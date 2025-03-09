@@ -1,0 +1,46 @@
+<%- include('./partials/header') %>
+<script defer src="/js/restriction.js"></script>
+<%- include('./partials/banner') %>
+
+<div class="toast-alert" id="toast">En tant que visiteur, vous n'êtes pas autorisé à mener cette action !</div>
+
+<h2 class="color-title">Supprimer un article</h2>
+
+
+<table class="table-display remove-items">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prix/kilo</th>
+        <th>Disponible</th>
+        <th class="hidden-td">Référence</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% allProducts.forEach(product => { %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price_per_kilo %></td>
+          <td><%= product.available %></td>
+          <td class="hidden-td"><%= product.reference %></td>
+
+          <% if (locals.user && (locals.user.role === "admin" || locals.user.role === "employee")) { %>
+
+            <td>
+              <form action="/admin/remove" method="POST">  <input type="hidden" name="id" value="<%= product.id %>">
+                  <button class="anchor-color table" type="submit">Supprimer</button>
+              </form>
+            </td>
+
+          <% } else { %>
+            <td>
+                  <button class="visitor anchor-color table" type="submit">Supprimer</button>
+            </td>
+          <% } %>
+        </tr>
+      <% }); %>
+    </tbody>
+</table>
+
+<%- include('./partials/footer') %>
